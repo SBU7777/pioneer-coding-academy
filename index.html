@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The Pioneer Coding Academy. Coding for Everyone. An AI-powered, project-based platform to learn coding by building real things.">
-<title>The Pioneer Coding Academy</title>
+<meta name="description" content="Summit Coach Training Academy. Equip. Empower. Encourage. Elevate. An AI-powered coach training academy.">
+<title>Summit Coach Training Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============ DESIGN TOKENS ============ */
 :root{
-  --night:#0A0E1A;
-  --basecamp:#111A2B;
-  --ridge:#18233B;
-  --ridge-2:#1F2D49;
-  --line:#2A3A57;
+  --night:#080C16;
+  --basecamp:#0F1930;
+  --ridge:#16233F;
+  --ridge-2:#1E2E50;
+  --line:#2C3E63;
   --line-soft:#22314c;
-  --blue:#4C8DFF;
-  --blue-deep:#2E6BE0;
-  --gold:#F6A94A;
-  --gold-soft:#FFC46B;
+  --blue:#C9A23F;
+  --blue-deep:#9E7C24;
+  --gold:#E8C25A;
+  --gold-soft:#F3D98A;
   --teal:#35D6A6;
   --rose:#FF6B7D;
   --text:#F5F8FF;
@@ -31,10 +31,10 @@
   --r-lg:22px;
   --r-md:16px;
   --r-sm:11px;
-  --grad-ascent:linear-gradient(120deg,var(--blue) 0%,#7C7BF0 48%,var(--gold) 100%);
-  --grad-blue:linear-gradient(135deg,var(--blue) 0%,var(--blue-deep) 100%);
+  --grad-ascent:linear-gradient(120deg,#B8862B 0%,#E8C25A 50%,#F3D98A 100%);
+  --grad-blue:linear-gradient(135deg,#E8C25A 0%,#B8862B 100%);
   --font-scale:1;
-  --focus:#7FB0FF;
+  --focus:#F3D98A;
 }
 :root[data-contrast="high"]{
   --night:#000000;
@@ -398,346 +398,320 @@ const I = {
 
 /* ---------- ACADEMY + COURSE CATALOG ---------- */
 const ACADEMIES = [
-  { id:'programming', name:'Programming', color:'#4C8DFF', grad:'linear-gradient(135deg,#4C8DFF,#2E6BE0)', icon:I.book,
-    blurb:'Build real web apps from your first line of HTML to a deployed AI product.',
-    courses:['HTML','CSS','JavaScript','React','Python','Git','GitHub','APIs','Databases','AI Development'],
-    projects:['Build a homepage','Build a dashboard','Build a login','Build an AI chatbot','Build a portfolio','Build a full web application'] },
-  { id:'ai', name:'AI Development', color:'#7C7BF0', grad:'linear-gradient(135deg,#8E7BF5,#5B4FD6)', icon:I.spark,
-    blurb:'Go from writing your first prompt to shipping automations and AI agents in code.',
-    courses:['Prompt Engineering','AI Fundamentals','LLMs','Automation','AI Agents','Voice AI','Image AI','OpenAI APIs','Anthropic APIs','Local AI'],
-    projects:['Build an AI Tutor','Build an AI Chatbot','Build an Automation Assistant','Build an AI powered app'] }
+  { id:'brotherhood', name:'School of Brotherhood Coaching', color:'#C9A23F', grad:'linear-gradient(135deg,#E8C25A,#B8862B)', icon:I.users,
+    blurb:'Strength in brotherhood. Unity in purpose. Learn to walk with men and build real connection.',
+    courses:['Foundations of Brotherhood','Building Trust','Holding Space','Accountability','Group Facilitation','Restoring Connection'],
+    projects:['Run a brotherhood circle','Lead an accountability check in','Facilitate a group session'] },
+  { id:'neuro', name:'School of Neuro Coaching', color:'#4C8DFF', grad:'linear-gradient(135deg,#4C8DFF,#2E6BE0)', icon:I.spark,
+    blurb:'Support today. Strength tomorrow. Hope always. Coach the mind with brain aware tools.',
+    courses:['The Coaching Brain','Stress and Regulation','Habits and Change','Reframing Thoughts','Emotional Awareness','Resilience'],
+    projects:['Map a client stress cycle','Design a habit plan','Run a reframing session'] },
+  { id:'wellness', name:'School of Life and Wellness Coaching', color:'#35D6A6', grad:'linear-gradient(135deg,#35D6A6,#1FA87E)', icon:I.target,
+    blurb:'Stronger mind. Healthier life. Brighter future. Guide whole person growth.',
+    courses:['Wellness Foundations','Goal Setting','Balance and Boundaries','Motivation','Healthy Routines','Whole Life Vision'],
+    projects:['Build a client wellness plan','Run a goal setting session','Design a 30 day routine'] },
+  { id:'leadership', name:'School of Leadership', color:'#B84A5A', grad:'linear-gradient(135deg,#D96476,#A33348)', icon:I.trophy,
+    blurb:'Lead others. Build tomorrows. Make an impact. Grow the leader inside the coach.',
+    courses:['Leadership Foundations','Vision and Direction','Influence','Hard Conversations','Building Teams','Leading Through Change'],
+    projects:['Write a leadership vision','Run a hard conversation role play','Build a team charter'] },
+  { id:'development', name:'School of Coach Development', color:'#8E7BF5', grad:'linear-gradient(135deg,#A78BFA,#6D5AD6)', icon:I.award,
+    blurb:'Grow coaches. Build legacies. Change lives. Master the craft and become certified.',
+    courses:['Coaching Fundamentals','Active Listening','Powerful Questions','Ethics and Boundaries','Session Structure','Building Your Practice'],
+    projects:['Complete a full mock session','Submit a coaching review','Build your coaching offer'] }
 ];
 
 /* ---------- FULLY BUILT LESSONS (keyed by academy:course) ---------- */
 /* practice item kinds: web (live preview) | python (pyodide) | write (run+check) | predict (MC) | fill (blank) | debug (fix+run) */
 const LESSONS = {
-  'programming:HTML': {
-    title:'HTML: Your First Web Page', minutes:14, xp:60, quizId:'programming:HTML',
-    objective:'Write a real, structured web page from scratch and understand what every tag is doing.',
+  'development:Coaching Fundamentals': {
+    title:'What Coaching Really Is', minutes:14, xp:70, quizId:'development:Coaching Fundamentals',
+    objective:'Understand what coaching is, what it is not, and the one mindset shift that separates a coach from an advice giver.',
     blocks:[
-      { type:'reading', h:'What HTML actually is', body:
-        `<p>HTML is the skeleton of every web page. It is not a programming language. It labels content so the browser knows what each piece is: a heading, a paragraph, a link.</p>
-         <p>Every element has the same shape: an opening tag, content, and a closing tag.</p>
-         <div class="code">&lt;h1&gt;Welcome to Summit&lt;/h1&gt;</div>` },
-      { type:'example', h:'A complete page', body:
-        `<p>The smallest real page. The <b>head</b> holds information about the page. The <b>body</b> holds what visitors see.</p>
-         <div class="code">&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello, world&lt;/h1&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;My first paragraph.&lt;/p&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>Think of a page like a house. The <code>html</code> tag is the plot of land, the <code>head</code> is the paperwork nobody sees, and the <code>body</code> is the house people walk into. Each tag is a room. Ask me to explain any room you have not built yet.</p>` },
+      { type:'reading', h:'Coaching is not advice giving', body:
+        `<p>Most people think coaching means telling someone what to do. It is almost the opposite. A coach helps a person find their own answer, because the answer they reach themselves is the one they will actually act on.</p>
+         <p>You are not the expert on their life. They are. Your job is to ask, listen, and reflect back what you hear so clearly that they see their own situation in a new light.</p>
+         <div class="callout"><div class="cl-tag">Core idea</div>A coach holds up a mirror, not a map.</div>` },
+      { type:'example', h:'Advice versus coaching', body:
+        `<p>Watch the difference in one exchange.</p>
+         <p><b>Advice:</b> "You should just quit that job and start your own thing."</p>
+         <p><b>Coaching:</b> "When you picture staying versus leaving, which one feels more alive to you, and why?"</p>
+         <p>The first closes the door to one answer. The second opens the room and lets them walk through it.</p>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of yourself as a guide on a trail the other person has walked their whole life. You have never walked it. But you can ask, "What is around that next bend?" and help them notice things they stopped seeing years ago. Ask me for more examples any time.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'web', prompt:'Edit this page. Change the heading to your name, then press Run to see it live.',
-          starter:'<h1>Your name here</h1>\n<p>One thing I want to build.</p>\n<ul>\n  <li>Skill one</li>\n  <li>Skill two</li>\n</ul>' },
-        { kind:'fill', prompt:'A link uses the anchor tag. Fill in the attribute that holds the web address.',
-          before:'<a ', blank:'attribute', after:'="https://summit.os">Visit</a>', answer:'href' },
-        { kind:'debug', lang:'web', prompt:'This code has a broken tag. Fix it so the paragraph closes correctly, then Run.',
-          broken:'<h2>About me</h2>\n<p>I am learning to build.</h2>', solution:'<h2>About me</h2>\n<p>I am learning to build.</p>' }
+        { kind:'predict', prompt:'Which response is coaching, not advice?',
+          code:'A friend says: "I am so overwhelmed at work."',
+          options:['You need to set better boundaries.','What would "less overwhelmed" actually look like for you?','Just delegate more of it.','I would talk to your boss if I were you.'], answer:1 },
+        { kind:'reflect', minWords:15, prompt:'Think of a time someone gave you advice you did not take. What would a good question have opened up instead?' },
+        { kind:'fill', prompt:'Finish the golden rule of coaching. The person being coached is the expert on their own ___.',
+          before:'The client is the expert on their own ', blank:'word', after:'.', answer:'life' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Build a page with a heading, two paragraphs, and a list of three skills. This is the first piece of your portfolio.</p>` }
+      { type:'project', h:'Session task', body:`<p>Write three open questions you could ask any person facing a hard choice. No question can be answered with yes or no. This is the first page of your coaching toolkit.</p>` }
     ]
   },
 
-  'programming:CSS': {
-    title:'CSS: Making It Look Good', minutes:15, xp:60, quizId:'programming:CSS',
-    objective:'Style a web page with color, spacing, and layout using CSS rules.',
+  'development:Active Listening': {
+    title:'Listening So People Feel Heard', minutes:15, xp:70, quizId:'development:Active Listening',
+    objective:'Practice the three levels of listening and learn to listen for what is under the words.',
     blocks:[
-      { type:'reading', h:'CSS styles what HTML structures', body:
-        `<p>HTML builds the structure. CSS decides how it looks. A CSS rule picks an element and sets properties on it.</p>
-         <div class="code">h1 {<br>&nbsp;&nbsp;color: navy;<br>&nbsp;&nbsp;font-size: 40px;<br>}</div>
-         <p>The part before the braces is the <b>selector</b>. Inside are <b>property: value</b> pairs.</p>` },
-      { type:'example', h:'The box model', body:
-        `<p>Every element is a box with padding inside, a border around it, and margin outside. Control space with these three and most layout problems disappear.</p>
-         <div class="code">.card {<br>&nbsp;&nbsp;padding: 16px;<br>&nbsp;&nbsp;margin: 20px;<br>&nbsp;&nbsp;border: 1px solid gray;<br>&nbsp;&nbsp;border-radius: 12px;<br>}</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>Padding is the stuffing inside a jacket. Border is the jacket itself. Margin is the personal space around the person wearing it. Tell me what looks off and I will tell you which of the three to adjust.</p>` },
+      { type:'reading', h:'The three levels of listening', body:
+        `<p><b>Level one</b> is listening to reply. You are waiting for your turn. <b>Level two</b> is listening to the words. You track what they say. <b>Level three</b> is listening to the whole person: their tone, their pauses, what they avoid.</p>
+         <p>Coaches live at level three. That is where you hear the fear under the frustration, or the hope under the complaint.</p>` },
+      { type:'example', h:'Hearing what is underneath', body:
+        `<p>A person says, flatly, "It is fine, I will just handle it myself." The words say fine. The tone says the opposite.</p>
+         <p>A level three response: "You said that is fine, but it did not sound fine. What is really going on there?"</p>
+         <div class="callout"><div class="cl-tag">Skill</div>Name the gap between the words and the tone, gently.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Imagine the words are the top of an iceberg. Most of what matters is under the water: the feeling, the need, the thing they have not said out loud yet. Your reflections help lift a little of that above the surface where both of you can see it.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'web', prompt:'Change the background color and padding, then Run to see the box update.',
-          starter:'<style>\n.box {\n  background: #4C8DFF;\n  color: white;\n  padding: 20px;\n  border-radius: 14px;\n  font-family: sans-serif;\n}\n</style>\n<div class="box">Style me</div>' },
-        { kind:'fill', prompt:'Which property sets the text color of an element?',
-          before:'p { ', blank:'property', after:': orange; }', answer:'color' },
-        { kind:'predict', prompt:'What does margin: auto do to a fixed-width block?',
-          options:['Deletes the margin','Centers it horizontally','Makes text bold','Hides the element'], answer:1 }
+        { kind:'predict', prompt:'Which reply shows level three listening?',
+          code:'Client: "I guess the presentation went okay." (said quietly, looking down)',
+          options:['Great, glad it went well.','So what is next on your list?','I am hearing "okay" but not much energy behind it. What part is sitting with you?','You should be proud of yourself.'], answer:2 },
+        { kind:'reflect', minWords:15, prompt:'Recall a recent conversation. What did the other person NOT say out loud that you sensed anyway? How did you know?' },
+        { kind:'fill', prompt:'Reflecting back what you heard often starts with two words.',
+          before:'"So what I am hearing is ', blank:'...', after:'"', answer:'...' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Style your portfolio page from the HTML lesson. Give it a background, readable font, and spacing that breathes.</p>` }
+      { type:'project', h:'Session task', body:`<p>In your next real conversation, spend sixty seconds only listening and reflecting back, no advice. Write one sentence about what changed in the exchange.</p>` }
     ]
   },
 
-  'programming:JavaScript': {
-    title:'JavaScript: Making Pages Think', minutes:18, xp:70, quizId:'programming:JavaScript',
-    objective:'Store data in variables, make decisions, and run code that produces output.',
+  'development:Powerful Questions': {
+    title:'Questions That Open Doors', minutes:14, xp:70, quizId:'development:Powerful Questions',
+    objective:'Learn the shape of a powerful question and when to use silence instead of one.',
     blocks:[
-      { type:'reading', h:'Variables and values', body:
-        `<p>JavaScript adds behavior. You store information in <b>variables</b> and act on it.</p>
-         <div class="code">let name = "Summit";<br>let count = 3;<br>console.log(name, count);</div>
-         <p><code>console.log</code> prints a value so you can see it. It is your first debugging tool.</p>` },
-      { type:'example', h:'Making decisions', body:
-        `<p>Code chooses a path with <code>if</code>.</p>
-         <div class="code">let xp = 220;<br>if (xp &gt;= 200) {<br>&nbsp;&nbsp;console.log("Level up");<br>} else {<br>&nbsp;&nbsp;console.log("Keep going");<br>}</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>A variable is a labeled box. You put a value in, you read it back later, you can swap it out. An <code>if</code> is a fork in a trail. The condition decides which way you walk. Ask me to trace any snippet line by line.</p>` },
+      { type:'reading', h:'What makes a question powerful', body:
+        `<p>Powerful questions are short, open, and about the person, not the problem. They usually start with What or How. They almost never start with Why, which can feel like an accusation.</p>
+         <p>Compare "Why did you do that?" with "What were you hoping would happen?" Same curiosity, completely different door.</p>` },
+      { type:'example', h:'A small library of openers', body:
+        `<p>Keep a handful of these ready:</p>
+         <p>"What matters most to you here?"<br>"What would you try if you knew you could not fail?"<br>"What is the real question underneath this one?"<br>"What is one small step you could take this week?"</p>
+         <div class="callout"><div class="cl-tag">Rule</div>After a powerful question, stay quiet. Let it work.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>A powerful question is like tossing a small stone into a still pond. Your job is not to keep tossing stones. Toss one good one, then watch the ripples. The silence after the question is where the person does their real thinking.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'write', lang:'js', prompt:'Write code that logs the sum of 12 and 30. Press Run. Target output: 42',
-          starter:'let a = 12;\nlet b = 30;\n// log the sum below\n', expect:'42' },
-        { kind:'predict', prompt:'What does this print?  let x = 5; x = x + 3; console.log(x);',
-          options:['5','8','53','undefined'], answer:1 },
-        { kind:'debug', lang:'js', prompt:'This should log "ready" but it errors. Fix the missing piece, then Run.',
-          broken:'let status = "ready"\nconsole.log(staus)', solution:'let status = "ready";\nconsole.log(status);' }
+        { kind:'predict', prompt:'Which is the more powerful question?',
+          code:'The client is stuck choosing between two paths.',
+          options:['Why can you not just decide?','Do you want option A?','What would make this decision easy?','Have you asked your family?'], answer:2 },
+        { kind:'reflect', minWords:15, prompt:'Write one powerful question you wish someone had asked you during a hard season of your life.' },
+        { kind:'fill', prompt:'The two words that begin most powerful questions are What and ___.',
+          before:'Most powerful questions start with What or ', blank:'word', after:'.', answer:'how' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Add a script to your page that logs a welcome message using a variable with your name.</p>` }
+      { type:'project', h:'Session task', body:`<p>Build your personal deck of ten powerful questions. Group them by moment: opening a session, breaking a stuck point, and closing with action.</p>` }
     ]
   },
 
-  'programming:React': {
-    title:'React: Building With Components', minutes:20, xp:80, quizId:'programming:React',
-    objective:'Understand components and state, and render a small interactive React piece.',
+  'development:Ethics and Boundaries': {
+    title:'Coaching With Integrity', minutes:13, xp:65, quizId:'development:Ethics and Boundaries',
+    objective:'Know the line between coaching and therapy, and how to hold healthy boundaries that protect both of you.',
     blocks:[
-      { type:'reading', h:'A component is a function that returns UI', body:
-        `<p>React lets you build interfaces out of reusable pieces called <b>components</b>. A component is a function that returns markup written in JSX.</p>
-         <div class="code">function Welcome() {<br>&nbsp;&nbsp;return &lt;h1&gt;Hello Summit&lt;/h1&gt;;<br>}</div>` },
-      { type:'example', h:'State makes it interactive', body:
-        `<p><code>useState</code> gives a component memory. When state changes, React re-renders that piece automatically.</p>
-         <div class="code">const [count, setCount] = useState(0);</div>
-         <p>Read <code>count</code> to show it. Call <code>setCount</code> to change it.</p>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>Think of a component as a stamp. Define it once, stamp it anywhere. State is the ink level in the stamp. Change the ink and every future press looks different, with no manual redraw. Ask me to break down any component you meet.</p>` },
+      { type:'reading', h:'Where coaching ends', body:
+        `<p>Coaching looks forward. It works with people who are basically well and want to grow. When someone is in genuine crisis, dealing with trauma, or needs a diagnosis, that is the work of a licensed professional, not a coach.</p>
+         <p>Knowing when to refer someone out is not a failure. It is one of the clearest signs of a mature, trustworthy coach.</p>
+         <div class="callout"><div class="cl-tag">Boundary</div>You coach the growth. You refer the wound.</div>` },
+      { type:'example', h:'A clean referral', body:
+        `<p>"What you are carrying sounds heavier than what coaching is built for, and you deserve real support with it. I would like to help you find someone trained for exactly this. Can we do that together right now?"</p>
+         <p>Warm, honest, and it keeps the person safe.</p>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of coaching as a gym and therapy as a hospital. Both help people, but you do not rehab a broken bone on a treadmill. A good coach knows which building the person actually needs to be in, and walks them to the door.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'web', prompt:'A live React counter. Press Run, then click the button in the preview. Try changing the starting number.',
-          starter:'<div id="root"></div>\n<script src="https://unpkg.com/react@18/umd/react.production.min.js"><\/script>\n<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"><\/script>\n<script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>\n<script type="text/babel">\nconst { useState } = React;\nfunction Counter() {\n  const [count, setCount] = useState(0);\n  return (\n    <div style={{fontFamily:"sans-serif",padding:20}}>\n      <h2>Count: {count}</h2>\n      <button onClick={() => setCount(count + 1)}>Add one</button>\n    </div>\n  );\n}\nReactDOM.createRoot(document.getElementById("root")).render(<Counter />);\n<\/script>' },
-        { kind:'predict', prompt:'What does useState(0) return?',
-          options:['A single number','A value and a function to update it','An HTML element','Nothing'], answer:1 },
-        { kind:'fill', prompt:'Complete the line that gives a component state starting at zero.',
-          before:'const [count, setCount] = ', blank:'call', after:'(0);', answer:'useState' }
+        { kind:'predict', prompt:'A client mentions thoughts of harming themselves. The right coaching move is to:',
+          code:'',
+          options:['Keep coaching, they will be fine','Give them your own advice','Pause coaching and help them reach professional and crisis support','Change the subject'], answer:2 },
+        { kind:'reflect', minWords:15, prompt:'What is one personal boundary you know you will need to hold as a coach, and why does it matter to you?' },
+        { kind:'fill', prompt:'Confidentiality means what is shared in a session generally stays ___.',
+          before:'What a client shares generally stays ', blank:'word', after:'.', answer:'private' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Turn one section of your dashboard into a component with a button that changes state.</p>` }
+      { type:'project', h:'Session task', body:`<p>Draft a short, plain language agreement you could give a new client covering confidentiality, what coaching is, and when you will refer them elsewhere.</p>` }
     ]
   },
 
-  'programming:Python': {
-    title:'Python: Your First Real Program', minutes:16, xp:70, quizId:'programming:Python',
-    objective:'Run real Python in your browser: variables, printing, loops, and a small function.',
+  'development:Session Structure': {
+    title:'Running a Real Session', minutes:16, xp:75, quizId:'development:Session Structure',
+    objective:'Learn a simple, repeatable structure that takes a client from where they are to a clear next step.',
     blocks:[
-      { type:'reading', h:'Python reads almost like English', body:
-        `<p>Python is famous for being readable. No braces, no semicolons. Indentation shows what belongs together.</p>
-         <div class="code">name = "Summit"<br>print("Hello", name)</div>
-         <p>Every practice box below runs a real Python engine right in your browser. Press Run.</p>` },
-      { type:'example', h:'Loops and functions', body:
-        `<p>A loop repeats work. A function packages work you want to reuse.</p>
-         <div class="code">def greet(person):<br>&nbsp;&nbsp;return "Welcome " + person<br><br>for name in ["Ana", "Ben"]:<br>&nbsp;&nbsp;print(greet(name))</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>A function is a recipe. You give it ingredients, it hands back a dish. A loop is doing the dishes: same action, one plate at a time, until the stack is empty. Paste any error you get and I will translate it into plain language.</p>` },
-      { type:'practice', h:'Practice (runs real Python)', items:[
-        { kind:'python', prompt:'Press Run. Then change the name and Run again.',
-          starter:'name = "Robert"\nprint("Welcome to Summit,", name)', expect:'Welcome to Summit' },
-        { kind:'write', lang:'python', prompt:'Write a loop that prints the numbers 1 to 3, each on its own line. Target output includes: 3',
-          starter:'# print 1, 2, 3\nfor i in range(1, 4):\n    print(i)', expect:'3' },
-        { kind:'predict', prompt:'What does this print?  print(len("summit"))',
-          options:['summit','6','5','error'], answer:1 }
-      ]},
-      { type:'project', h:'Project task', body:`<p>Write a small Python function that takes a name and returns a personalized greeting, then call it twice.</p>` }
-    ]
-  },
-
-  'programming:Git': {
-    title:'Git: Saving Your Work Safely', minutes:12, xp:55, quizId:'programming:Git',
-    objective:'Track changes to your project with Git so you can never lose progress.',
-    blocks:[
-      { type:'reading', h:'Git remembers every version', body:
-        `<p>Git is a time machine for your code. You take a snapshot, called a <b>commit</b>, whenever you finish a piece. You can always return to any snapshot.</p>
-         <div class="code">git add .<br>git commit -m "Add homepage"</div>` },
-      { type:'example', h:'The everyday loop', body:
-        `<p>Three commands cover most days. <b>Status</b> shows what changed, <b>add</b> stages it, <b>commit</b> saves the snapshot with a message.</p>
-         <div class="code">git status<br>git add .<br>git commit -m "Describe the change"</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>Think of writing a book. <code>add</code> is choosing which pages to photocopy. <code>commit</code> is stapling that copy with a sticky note describing it. Later you can pull any stapled copy back out. Ask me what any command does before you run it.</p>` },
+      { type:'reading', h:'A structure you can trust', body:
+        `<p>A reliable session has four moves. <b>Open</b>: what do you want from our time today. <b>Explore</b>: what is really going on. <b>Focus</b>: what matters most right now. <b>Commit</b>: what is one step you will take.</p>
+         <p>New coaches often skip Open and rush to fixing. Slow down. Let the client name what they came for.</p>` },
+      { type:'example', h:'The four moves in one line each', body:
+        `<p><b>Open:</b> "What would make this half hour worth it for you?"<br>
+         <b>Explore:</b> "Tell me more about that."<br>
+         <b>Focus:</b> "Of everything we touched, what is the one thing to work on?"<br>
+         <b>Commit:</b> "What will you do before we talk again, and when?"</p>
+         <div class="callout"><div class="cl-tag">Anchor</div>End every session with a step small enough to actually happen.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Picture a hike. Open is checking where they want to go. Explore is walking the terrain. Focus is picking the one trail. Commit is the first footstep. You are not carrying them up the mountain. You are helping them take a step they can repeat without you.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'fill', prompt:'Which command stages all your changed files for the next commit?',
-          before:'git ', blank:'command', after:' .', answer:'add' },
-        { kind:'predict', prompt:'What does the -m flag on git commit do?',
-          options:['Merges branches','Attaches a message to the commit','Moves files','Deletes history'], answer:1 },
-        { kind:'fill', prompt:'Complete the command that shows what has changed but is not yet staged.',
-          before:'git ', blank:'command', after:'', answer:'status' }
+        { kind:'predict', prompt:'A session is almost over and nothing has been decided. Which move is missing?',
+          code:'',
+          options:['Open','Explore','Commit','Nothing, that is fine'], answer:2 },
+        { kind:'reflect', minWords:18, prompt:'Imagine a client who wants "everything to be better." Walk through how you would use Focus to narrow that into one workable thing.' },
+        { kind:'fill', prompt:'The four moves are Open, Explore, Focus, and ___.',
+          before:'Open, Explore, Focus, and ', blank:'word', after:'.', answer:'commit' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Initialize Git in your project folder and make your first commit describing the page you built.</p>` }
+      { type:'project', h:'Session task', body:`<p>Run a full mock session with a friend using the four moves. Afterward, note which move felt hardest and why. That is your growth edge.</p>` }
     ]
   },
 
-  'programming:GitHub': {
-    title:'GitHub: Sharing and Deploying', minutes:13, xp:55, quizId:'programming:GitHub',
-    objective:'Push your project to GitHub and understand how it connects to live deployment.',
+  'development:Building Your Practice': {
+    title:'Becoming a Coach People Seek', minutes:15, xp:75, quizId:'development:Building Your Practice',
+    objective:'Turn your skill into an offer: who you help, what changes for them, and how they can start.',
     blocks:[
-      { type:'reading', h:'GitHub is Git in the cloud', body:
-        `<p>Git lives on your machine. GitHub stores a copy online so you can back it up, share it, and connect it to hosting like Netlify.</p>
-         <div class="code">git push origin main</div>
-         <p>Push sends your local commits up to GitHub.</p>` },
-      { type:'example', h:'From commit to live site', body:
-        `<p>The modern flow: you push to GitHub, and a host watching your repository rebuilds the site automatically. This is continuous deployment.</p>
-         <ul><li>Commit locally</li><li>Push to GitHub</li><li>Host detects the change and publishes</li></ul>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>GitHub is a shared shelf in a public library. You keep your own draft at home, then place a copy on the shelf so others, and your hosting robot, can read it. When the shelf copy updates, the robot reprints the live edition. Ask me about pull requests when you are ready to collaborate.</p>` },
+      { type:'reading', h:'Clarity beats cleverness', body:
+        `<p>People do not hire "a coach." They hire someone who understands their specific struggle and can name the change they want. The clearer you are about who you serve, the easier everything else becomes.</p>
+         <p>Your story is part of your offer. The season you came through is often exactly what lets someone trust you with theirs.</p>` },
+      { type:'example', h:'A simple offer statement', body:
+        `<p>Fill in this frame: "I help ___ who are struggling with ___ move toward ___."</p>
+         <p>Example: "I help men who feel isolated rebuild real connection and purpose."</p>
+         <div class="callout"><div class="cl-tag">Try it</div>Say your version out loud. If it makes you a little nervous, it is probably true enough to matter.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of your offer as a lighthouse. You are not chasing every ship in the ocean. You are standing still and shining clearly, so the specific ships looking for your harbor can find you. Narrow is not small. Narrow is findable.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'fill', prompt:'Which command sends your commits up to GitHub?',
-          before:'git ', blank:'command', after:' origin main', answer:'push' },
-        { kind:'predict', prompt:'What is a pull request mainly used for?',
-          options:['Deleting a repo','Proposing and reviewing changes before merging','Renaming files','Running tests only'], answer:1 },
-        { kind:'predict', prompt:'In continuous deployment, what triggers a new live version?',
-          options:['Restarting your computer','A push to the connected branch','Opening the browser','Nothing, it is manual'], answer:1 }
+        { kind:'reflect', minWords:18, prompt:'Write your first draft offer using the frame: I help ___ who are struggling with ___ move toward ___.' },
+        { kind:'predict', prompt:'Which offer is clearest and most likely to attract the right person?',
+          code:'',
+          options:['I coach anyone who wants to improve.','I help new managers who feel out of their depth lead with confidence.','I do life and business and wellness coaching.','I am a certified coach.'], answer:1 },
+        { kind:'fill', prompt:'Your lived ___ is often the reason a client trusts you with theirs.',
+          before:'Your lived ', blank:'word', after:' builds trust.', answer:'story' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Create a GitHub repository, push your project, and note the repository URL for your deployment step.</p>` }
+      { type:'project', h:'Session task', body:`<p>Write a one paragraph welcome you could send a first client: who you help, what shifts for them, and the first step to begin. This is the seed of your practice.</p>` }
     ]
   },
 
-  'programming:APIs': {
-    title:'APIs: Talking to Other Services', minutes:16, xp:70, quizId:'programming:APIs',
-    objective:'Request data from an API and read the JSON it sends back.',
+  'brotherhood:Foundations of Brotherhood': {
+    title:'Why Brotherhood Coaching Exists', minutes:13, xp:65, quizId:'brotherhood:Foundations of Brotherhood',
+    objective:'Understand isolation as the core problem and connection as the work of a brotherhood coach.',
     blocks:[
-      { type:'reading', h:'An API is a service you can call', body:
-        `<p>An API lets your code ask another program for data or actions. Most web APIs answer in <b>JSON</b>, a simple text format of keys and values.</p>
-         <div class="code">{ "name": "Summit", "level": 3 }</div>` },
-      { type:'example', h:'Reading JSON', body:
-        `<p>Once you have JSON, you read a field by its key.</p>
-         <div class="code">const data = JSON.parse(text);<br>console.log(data.name);</div>
-         <p>In the browser you fetch first, then parse. In practice below you will parse a JSON string directly.</p>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>An API is a drive-through window. You place a specific order at the URL, and a tray of data comes back. JSON is just the labeled containers on the tray. Tell me the field you want and I will show you how to reach it.</p>` },
+      { type:'reading', h:'The quiet epidemic', body:
+        `<p>Many men carry their hardest seasons alone, convinced that needing others is weakness. Brotherhood coaching exists to break that silence and rebuild real connection between men who were never taught how.</p>
+         <p>Strength in brotherhood, unity in purpose. That is not a slogan. It is the outcome you help create.</p>` },
+      { type:'example', h:'From isolation to circle', body:
+        `<p>A man says he is "fine, just busy." A brotherhood coach hears the wall and gently tests it: "When was the last time you told someone the whole truth about how you are doing?"</p>
+         <div class="callout"><div class="cl-tag">Aim</div>Move men from performing okay to being honestly known.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Isolation is like a man carrying a heavy pack and insisting he is fine. You do not grab the pack. You walk beside him long enough that he trusts you to help him set it down. Brotherhood is built at walking pace.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'write', lang:'js', prompt:'Parse this JSON and log the level. Target output: 3',
-          starter:'const text = \'{ "name": "Summit", "level": 3 }\';\nconst data = JSON.parse(text);\n// log the level below\n', expect:'3' },
-        { kind:'predict', prompt:'What format do most web APIs return?',
-          options:['A spreadsheet','JSON','An image','A PDF'], answer:1 },
-        { kind:'fill', prompt:'Complete the browser call that requests data from a URL.',
-          before:'const res = await ', blank:'function', after:'("/api/data");', answer:'fetch' }
+        { kind:'reflect', minWords:15, prompt:'What made it hard, at some point in your life, to be honest with other people about your struggles? What would have helped?' },
+        { kind:'predict', prompt:'A man in a group stays silent every week. The best first move is to:',
+          code:'',
+          options:['Call him out in front of everyone','Ignore it, he will speak when ready','Reach him privately and invite, not pressure, him in','Ask him to leave'], answer:2 }
       ]},
-      { type:'project', h:'Project task', body:`<p>Call a public API of your choice, log one field from the response, and note what the endpoint returns.</p>` }
+      { type:'project', h:'Session task', body:`<p>Outline the first gathering of a brotherhood circle: one opening question, one ground rule, and how you would close. Keep it simple and safe.</p>` }
     ]
   },
 
-  'programming:Databases': {
-    title:'Databases: Storing Data That Lasts', minutes:15, xp:65, quizId:'programming:Databases',
-    objective:'Understand tables, rows, and keys, and query a small dataset.',
+  'neuro:The Coaching Brain': {
+    title:'Coaching a Brain Under Stress', minutes:14, xp:65, quizId:'neuro:The Coaching Brain',
+    objective:'Learn why a stressed brain cannot think clearly, and how to help it settle before you coach.',
     blocks:[
-      { type:'reading', h:'Data lives in tables', body:
-        `<p>A database keeps information after your program closes. Most store data in <b>tables</b>: columns describe the fields, rows are the records.</p>
-         <div class="code">users<br>id | name  | level<br>1&nbsp;&nbsp;| Ana&nbsp;&nbsp;&nbsp;| 3<br>2&nbsp;&nbsp;| Ben&nbsp;&nbsp;&nbsp;| 1</div>` },
-      { type:'example', h:'Asking questions with SQL', body:
-        `<p>SQL is the language for asking a database questions.</p>
-         <div class="code">SELECT name FROM users WHERE level &gt; 2;</div>
-         <p>The <b>primary key</b>, usually <code>id</code>, uniquely identifies each row.</p>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>A table is a spreadsheet with rules. A primary key is the seat number that belongs to exactly one person. A query is you asking the librarian for every book that matches a condition. Ask me to translate any question into SQL.</p>` },
+      { type:'reading', h:'Safety before strategy', body:
+        `<p>When a person is stressed, the thinking part of the brain goes quiet and the alarm part takes over. You cannot coach a brain that feels unsafe. First you help it settle, then you explore.</p>
+         <p>Support today, strength tomorrow, hope always. Regulation is the doorway to everything else.</p>` },
+      { type:'example', h:'Settle, then explore', body:
+        `<p>A client arrives flooded and spiraling. Before any goal talk: "Let us slow this down. Take one full breath with me. Now, what is the very next small thing, not the whole mountain?"</p>
+         <div class="callout"><div class="cl-tag">Order</div>Calm the alarm first. Insight comes after safety.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of a smoke alarm going off in the house. You cannot have a calm conversation while it is screaming. Your first job is to quiet the alarm. Only then can the two of you actually talk about the kitchen.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'fill', prompt:'Which SQL keyword retrieves data from a table?',
-          before:'', blank:'keyword', after:' name FROM users;', answer:'SELECT' },
-        { kind:'predict', prompt:'What does a primary key guarantee?',
-          options:['The row is encrypted','Each row can be uniquely identified','The table is sorted','Faster internet'], answer:1 },
-        { kind:'python', prompt:'This treats a list of rows like a tiny table. Press Run to see who is above level 2.',
-          starter:'users = [\n  {"name": "Ana", "level": 3},\n  {"name": "Ben", "level": 1},\n  {"name": "Cara", "level": 4},\n]\nfor u in users:\n    if u["level"] > 2:\n        print(u["name"])', expect:'Ana' }
+        { kind:'predict', prompt:'A client is clearly overwhelmed and cannot focus. You should first:',
+          code:'',
+          options:['Push through the agenda','Help them regulate and slow down','Give harder homework','List everything they did wrong'], answer:1 },
+        { kind:'reflect', minWords:15, prompt:'What is one thing that reliably helps you settle when your own stress alarm is going off? How might that inform your coaching?' }
       ]},
-      { type:'project', h:'Project task', body:`<p>Sketch a table for your project: name the columns, pick a primary key, and write one SELECT you would need.</p>` }
+      { type:'project', h:'Session task', body:`<p>Design a two minute opening ritual that helps a client regulate before a session begins. Write out exactly what you would say.</p>` }
     ]
   },
 
-  'programming:AI Development': {
-    title:'AI Development: Building With Models', minutes:18, xp:80, quizId:'programming:AI Development',
-    objective:'Send a prompt to an AI model in code and shape the reply with a reusable template.',
+  'wellness:Wellness Foundations': {
+    title:'Coaching the Whole Person', minutes:13, xp:65, quizId:'wellness:Wellness Foundations',
+    objective:'See the person across mind, body, and direction, and coach toward balance rather than a single fix.',
     blocks:[
-      { type:'reading', h:'An AI model is an API you prompt', body:
-        `<p>Modern AI development is often just calling an API with a well-built prompt and using the reply. The same request and response shape you learned applies here.</p>
-         <div class="code">{ "model": "claude", "messages": [ ... ] }</div>` },
-      { type:'example', h:'Templates make prompts reliable', body:
-        `<p>Instead of writing a fresh prompt each time, build a template with slots you fill in. This is the core trick behind consistent AI features.</p>
-         <div class="code">def build_prompt(topic):<br>&nbsp;&nbsp;return "Explain " + topic + " to a beginner in 3 lines."</div>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>A prompt template is a fill-in-the-blank form. You design the form once, then feed it different topics. The model is a very fast writer that fills the rest. Show me your template and I will help you tighten it.</p>` },
-      { type:'practice', h:'Practice (runs real Python)', items:[
-        { kind:'python', prompt:'Run this prompt builder, then change the topic and Run again.',
-          starter:'def build_prompt(topic):\n    return "Explain " + topic + " to a beginner in 3 lines."\n\nprint(build_prompt("APIs"))', expect:'Explain APIs' },
-        { kind:'predict', prompt:'Why use a prompt template in code?',
-          options:['To make prompts slower','To get consistent, reusable results','To hide the model','To avoid variables'], answer:1 },
-        { kind:'write', lang:'python', prompt:'Finish the template so it asks for a summary of the topic. Target output includes: summary',
-          starter:'def build_prompt(topic):\n    return "Write a short summary of " + topic\n\nprint(build_prompt("Summit"))', expect:'summary' }
-      ]},
-      { type:'project', h:'Project task', body:`<p>Write a prompt template function for a task in your real work, then run it with two different inputs.</p>` }
-    ]
-  },
-
-  'ai:Prompt Engineering': {
-    title:'Prompt Engineering: Talking to AI Clearly', minutes:12, xp:60, quizId:'ai:Prompt Engineering',
-    objective:'Write prompts that get you useful, specific answers instead of vague ones.',
-    blocks:[
-      { type:'reading', h:'A prompt is a set of instructions', body:
-        `<p>A language model does what a fast, literal assistant would do. The quality out is set by the clarity in.</p>
-         <div class="code">Write a 5 line welcome message for a new coding student.<br>Tone: warm and direct. No hype. End with one invitation.</div>` },
-      { type:'example', h:'The four levers', body:
-        `<p>Most good prompts pull at least one lever:</p>
-         <ul><li><b>Role</b>: who should the AI act as?</li><li><b>Task</b>: what exactly should it produce?</li><li><b>Context</b>: what should it know first?</li><li><b>Format</b>: list, table, script, one paragraph.</li></ul>` },
-      { type:'ai', h:'How the AI Mentor would explain it', body:
-        `<p>Imagine ordering food. "Something good" gets a random plate. "A warm bowl of chicken soup, not too salty" gets what you wanted. Tell me what you are making and I will sharpen your prompt.</p>` },
+      { type:'reading', h:'One life, many parts', body:
+        `<p>Life and wellness coaching treats a person as a whole. A work problem may really be a sleep problem. A motivation problem may really be a meaning problem. You help them see the connections.</p>
+         <p>Stronger mind, healthier life, brighter future. You coach the whole system, not one symptom.</p>` },
+      { type:'example', h:'Following the thread', body:
+        `<p>Client: "I just cannot get motivated to exercise." A whole person coach explores wider: "What is your sleep like? Your stress? When did movement last feel good rather than like a chore?"</p>
+         <div class="callout"><div class="cl-tag">Lens</div>Zoom out before you zoom in.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of the person as a garden, not a single plant. If one corner is not growing, you do not just yank at it. You check the light, the water, and the soil around it. Wellness coaching tends the whole garden.</p>` },
       { type:'practice', h:'Practice', items:[
-        { kind:'predict', prompt:'Which prompt will produce the most predictable result?',
-          options:['write something','help me','Write a 3 line email declining a meeting, polite tone','ideas'], answer:2 },
-        { kind:'fill', prompt:'Name the lever that controls whether you get a list or a paragraph.',
-          before:'The ', blank:'lever', after:' lever.', answer:'format' }
+        { kind:'reflect', minWords:15, prompt:'Pick one area of your own life that feels stuck. What nearby area might actually be feeding it?' },
+        { kind:'predict', prompt:'A client wants to fix only their diet. The whole person move is to:',
+          code:'',
+          options:['Give a strict meal plan and stop there','Explore how sleep, stress, and routine connect to it','Tell them diet is all that matters','Refuse to discuss anything else'], answer:1 }
       ]},
-      { type:'project', h:'Project task', body:`<p>Write a reusable prompt template for a task you do often. This is the first tool in your Automation Assistant.</p>` }
+      { type:'project', h:'Session task', body:`<p>Create a simple life balance check across mind, body, relationships, and direction. Write one gentle opening question for each area.</p>` }
+    ]
+  },
+
+  'leadership:Leadership Foundations': {
+    title:'The Leader Inside the Coach', minutes:13, xp:65, quizId:'leadership:Leadership Foundations',
+    objective:'Understand leadership as service and learn to coach others toward influence, not control.',
+    blocks:[
+      { type:'reading', h:'Lead by lifting', body:
+        `<p>Real leadership is not about being in charge. It is about taking care of those in your charge. A leadership coach helps people move from pushing others to lifting them.</p>
+         <p>Lead others, build tomorrows, make an impact. Influence grows from trust, not title.</p>` },
+      { type:'example', h:'Control versus influence', body:
+        `<p>Control says, "Do this because I said so." Influence says, "Here is where we are going and why it matters. What do you need to get there?"</p>
+         <div class="callout"><div class="cl-tag">Shift</div>People commit to what they help shape.</div>` },
+      { type:'ai', h:'In plain words', body:
+        `<p>Think of a leader as the person holding the lantern on a night hike, not the one shoving from behind. The light does not force anyone forward. It just makes the next step visible, and people move because they can finally see.</p>` },
+      { type:'practice', h:'Practice', items:[
+        { kind:'reflect', minWords:15, prompt:'Describe a leader who influenced you well. What did they do that made you want to follow, not just obey?' },
+        { kind:'predict', prompt:'A team leader complains their people "just will not step up." A useful coaching question is:',
+          code:'',
+          options:['Why are they so lazy?','Where might they not feel safe to try?','Have you thought about firing them?','Do you want me to talk to them?'], answer:1 }
+      ]},
+      { type:'project', h:'Session task', body:`<p>Write a short leadership vision statement a client could use: where we are going, why it matters, and how each person contributes.</p>` }
     ]
   }
 };
 
-/* ---------- QUIZZES ---------- */
 const QUIZZES = {
-  'programming:HTML': { title:'HTML Check', questions:[
-    { q:'What is HTML mainly used for?', opts:['Styling colors','Labeling and structuring content','Running calculations','Storing passwords'], a:1 },
-    { q:'Which part do visitors actually see?', opts:['The head','The title','The body','The doctype'], a:2 },
-    { q:'What closes an h1 element?', opts:['<h1>','</h1>','<end>','<h1/>'], a:1 }
+  'development:Coaching Fundamentals': { title:'Coaching Fundamentals Check', questions:[
+    { q:'The main job of a coach is to:', opts:['Give the best advice','Help the person find their own answer','Fix the problem for them','Prove their expertise'], a:1 },
+    { q:'Who is the expert on the client\'s life?', opts:['The coach','A licensed therapist','The client','Their boss'], a:2 },
+    { q:'A coaching response tends to:', opts:['Close the door to one answer','Open the room to their own thinking','Change the subject','End with a command'], a:1 }
   ]},
-  'programming:CSS': { title:'CSS Check', questions:[
-    { q:'What does CSS do?', opts:['Structures content','Styles how content looks','Stores data','Sends email'], a:1 },
-    { q:'In the box model, what is space OUTSIDE the border?', opts:['padding','margin','content','float'], a:1 },
-    { q:'Which sets text color?', opts:['background','color','border','font-weight'], a:1 }
+  'development:Active Listening': { title:'Active Listening Check', questions:[
+    { q:'Level three listening pays attention to:', opts:['Only your reply','Only the words','The whole person, tone and all','The clock'], a:2 },
+    { q:'Reflecting back means:', opts:['Repeating advice','Saying what you heard so they feel understood','Correcting them','Staying silent forever'], a:1 },
+    { q:'When words and tone disagree, a coach:', opts:['Believes only the words','Ignores it','Gently names the gap','Ends the session'], a:2 }
   ]},
-  'programming:JavaScript': { title:'JavaScript Check', questions:[
-    { q:'What does console.log do?', opts:['Deletes code','Prints a value so you can see it','Styles a page','Saves a file'], a:1 },
-    { q:'Which keyword declares a variable?', opts:['let','loop','tag','style'], a:0 },
-    { q:'What runs when an if condition is false?', opts:['The if block','The else block','Nothing ever','The whole file again'], a:1 }
+  'development:Powerful Questions': { title:'Powerful Questions Check', questions:[
+    { q:'Powerful questions usually start with:', opts:['Why','What or How','Did or Do','When exactly'], a:1 },
+    { q:'After a powerful question you should:', opts:['Ask three more','Answer it yourself','Stay quiet and let it work','Change topics'], a:2 },
+    { q:'Powerful questions are mostly about:', opts:['The problem','The person','You','The rules'], a:1 }
   ]},
-  'programming:React': { title:'React Check', questions:[
-    { q:'What is a React component?', opts:['A database','A function that returns UI','A CSS file','A server'], a:1 },
-    { q:'What does useState give you?', opts:['A value and an updater','Only a number','A web address','A style'], a:0 },
-    { q:'When state changes, React...', opts:['does nothing','re-renders that piece','reloads the whole site','deletes the component'], a:1 }
+  'development:Ethics and Boundaries': { title:'Ethics and Boundaries Check', questions:[
+    { q:'Coaching is a good fit for people who are:', opts:['In acute crisis','Basically well and want to grow','Seeking a diagnosis','Unwilling to talk'], a:1 },
+    { q:'Knowing when to refer someone out is:', opts:['A failure','A sign of a mature coach','Rare and shameful','Never needed'], a:1 },
+    { q:'What a client shares generally stays:', opts:['Public','Private','On social media','With their boss'], a:1 }
   ]},
-  'programming:Python': { title:'Python Check', questions:[
-    { q:'What shows grouping in Python?', opts:['Braces','Semicolons','Indentation','Commas'], a:2 },
-    { q:'What does a function return statement do?', opts:['Prints forever','Hands back a value','Deletes data','Loops'], a:1 },
-    { q:'range(1, 4) covers which numbers?', opts:['1 to 4','1, 2, 3','0 to 4','4 only'], a:1 }
+  'development:Session Structure': { title:'Session Structure Check', questions:[
+    { q:'The four moves of a session are Open, Explore, Focus, and:', opts:['Finish','Commit','Bill','Repeat'], a:1 },
+    { q:'New coaches most often skip:', opts:['Commit','Open','Explore','Nothing'], a:1 },
+    { q:'A good session ends with a step that is:', opts:['Huge and ambitious','Small enough to actually happen','Optional','Undefined'], a:1 }
   ]},
-  'programming:Git': { title:'Git Check', questions:[
-    { q:'What is a commit?', opts:['A deleted file','A saved snapshot of your work','A web host','A browser'], a:1 },
-    { q:'What does git add do?', opts:['Publishes online','Stages changes for the next commit','Deletes history','Renames a repo'], a:1 },
-    { q:'The -m flag on commit...', opts:['merges','attaches a message','moves files','mutes output'], a:1 }
+  'development:Building Your Practice': { title:'Building Your Practice Check', questions:[
+    { q:'People hire a coach who:', opts:['Helps anyone with anything','Understands their specific struggle','Has the most certificates','Charges the least'], a:1 },
+    { q:'Your lived story is:', opts:['Irrelevant','A liability','Part of why clients trust you','A secret'], a:2 },
+    { q:'A clear offer names who you help, their struggle, and the:', opts:['price','change they want','location','schedule'], a:1 }
   ]},
-  'programming:GitHub': { title:'GitHub Check', questions:[
-    { q:'What is GitHub?', opts:['A code editor','Git hosting in the cloud','A CSS framework','A database'], a:1 },
-    { q:'git push does what?', opts:['Downloads code','Sends commits to GitHub','Deletes a branch','Opens a browser'], a:1 },
-    { q:'Continuous deployment publishes when...', opts:['you restart your PC','you push to the connected branch','you close the editor','never'], a:1 }
+  'brotherhood:Foundations of Brotherhood': { title:'Brotherhood Foundations Check', questions:[
+    { q:'The core problem brotherhood coaching addresses is:', opts:['Laziness','Isolation and silence','Lack of money','Bad habits'], a:1 },
+    { q:'The aim is to move men from performing okay to:', opts:['Winning','Being honestly known','Staying quiet','Competing'], a:1 }
   ]},
-  'programming:APIs': { title:'APIs Check', questions:[
-    { q:'What is an API?', opts:['A styling tool','A service your code can call','A type of image','A password'], a:1 },
-    { q:'Most web APIs return...', opts:['JSON','a spreadsheet','a video','a font'], a:0 },
-    { q:'JSON.parse turns text into...', opts:['an image','a usable data object','a stylesheet','a commit'], a:1 }
+  'neuro:The Coaching Brain': { title:'Neuro Coaching Check', questions:[
+    { q:'A stressed brain first needs:', opts:['A strategy','To settle and feel safe','More pressure','Harder goals'], a:1 },
+    { q:'The right order is:', opts:['Strategy then safety','Safety then strategy','Neither','Goals only'], a:1 }
   ]},
-  'programming:Databases': { title:'Databases Check', questions:[
-    { q:'What is a row?', opts:['A single record','A color','A function','A branch'], a:0 },
-    { q:'A primary key...', opts:['encrypts data','uniquely identifies each row','sorts columns','hosts the site'], a:1 },
-    { q:'Which SQL keyword reads data?', opts:['DELETE','SELECT','DROP','PUSH'], a:1 }
+  'wellness:Wellness Foundations': { title:'Wellness Foundations Check', questions:[
+    { q:'Whole person coaching means:', opts:['Fixing one symptom','Seeing mind, body, and direction together','Only diet','Only exercise'], a:1 },
+    { q:'Before you zoom in, you should:', opts:['Zoom out','Give a plan','Stop listening','Refer out'], a:0 }
   ]},
-  'programming:AI Development': { title:'AI Development Check', questions:[
-    { q:'Calling an AI model is most like...', opts:['editing CSS','calling an API with a prompt','deleting a database','pushing to Git'], a:1 },
-    { q:'A prompt template helps you...', opts:['hide the model','get consistent, reusable results','avoid coding','slow things down'], a:1 },
-    { q:'What usually carries the message to the model?', opts:['a stylesheet','the messages field','a primary key','the margin'], a:1 }
-  ]},
-  'ai:Prompt Engineering': { title:'Prompt Engineering Check', questions:[
-    { q:'Why does a specific prompt work better?', opts:['Longer words','Clear instructions to follow','It costs more','It hides intent'], a:1 },
-    { q:'Which is NOT one of the four levers?', opts:['Role','Task','Format','Font size'], a:3 },
-    { q:'A good prompt usually includes the...', opts:['weather','desired format','time zone','model version'], a:1 }
+  'leadership:Leadership Foundations': { title:'Leadership Foundations Check', questions:[
+    { q:'Real leadership is mostly about:', opts:['Being in charge','Taking care of those in your charge','Giving orders','Titles'], a:1 },
+    { q:'People commit most to what they:', opts:['Are forced into','Help shape','Are told','Ignore'], a:1 }
   ]}
 };
 
@@ -747,22 +721,20 @@ const BADGES = [
   { id:'quiz-ace', emoji:'🎯', name:'Sharp Shot', desc:'Score 100% on a quiz', bg:'linear-gradient(135deg,#35D6A6,#1FA87E)' },
   { id:'streak-3', emoji:'🔥', name:'On a Roll', desc:'Reach a 3 day streak', bg:'linear-gradient(135deg,#FF8AA0,#E8455F)' },
   { id:'builder', emoji:'🛠️', name:'Builder', desc:'Unlock your first project', bg:'linear-gradient(135deg,#FFC46B,#F0932B)' },
-  { id:'mentor-chat', emoji:'💬', name:'Curious Mind', desc:'Ask the AI Mentor a question', bg:'linear-gradient(135deg,#8E7BF5,#5B4FD6)' },
   { id:'graduate', emoji:'🎓', name:'Summit Reached', desc:'Earn a certificate', bg:'linear-gradient(135deg,#F6A94A,#4C8DFF)' }
 ];
 
 /* ---------- COMMUNITY (sample) ---------- */
 const THREADS = [
-  { who:'Maya R.', color:'#4C8DFF', title:'Just deployed my first homepage to Netlify', body:'The lesson made it click. Continuous deployment felt like magic when the URL went live.', tag:'Programming', replies:14, likes:38, when:'2h ago' },
-  { who:'Devon K.', color:'#35D6A6', title:'My first JavaScript function finally worked', body:'I stared at the error for an hour, then saw the missing bracket. That feeling when it runs is unreal.', tag:'JavaScript', replies:9, likes:21, when:'5h ago' },
-  { who:'Priya S.', color:'#F6A94A', title:'Python loops finally clicked for me', body:'The practice exercises did it. Sharing the little script I wrote to keep myself motivated. You can do this.', tag:'Python', replies:22, likes:57, when:'1d ago' },
-  { who:'Marcus T.', color:'#8E7BF5', title:'Prompt template thread. Drop your best one', body:'Starting a shared library for the AI Development course. I will pin the strongest patterns for everyone learning.', tag:'AI Development', replies:31, likes:64, when:'1d ago' }
+  { who:'Maya R.', color:'#C9A23F', title:'First full mock session done, and I did not give advice once', body:'The four move structure kept me steady. When I stayed quiet after a powerful question, the client found their own answer.', tag:'Coach Development', replies:14, likes:38, when:'2h ago' },
+  { who:'Devon K.', color:'#4C8DFF', title:'How do you keep a session on track without steering?', body:'Looking for tips on gentle redirection when a client drifts. What works for you?', tag:'Session Structure', replies:9, likes:21, when:'5h ago' },
+  { who:'Priya S.', color:'#35D6A6', title:'The referral lesson changed how I hold boundaries', body:'Learning where coaching ends made me a safer coach. I finally know when to walk someone to another door.', tag:'Ethics', replies:22, likes:57, when:'1d ago' },
+  { who:'Marcus T.', color:'#8E7BF5', title:'My brotherhood circle had its first honest night', body:'One man finally said the whole truth about his week. The room went quiet, then something shifted. This is the work.', tag:'Brotherhood', replies:31, likes:64, when:'1d ago' }
 ];
 
 const EVENTS = [
-  { title:'Live build: Deploy your portfolio', when:'Thu, 7:00 PM', host:'Programming Academy' },
-  { title:'Ask an AI Mentor, open Q&A', when:'Sat, 11:00 AM', host:'AI Academy' },
-  { title:'Code review and pair programming', when:'Sun, 4:00 PM', host:'The Pioneer Coding Academy' }
+  { title:'Live practice: run a full mock session', when:'Thu, 7:00 PM', host:'School of Coach Development' },
+  { title:'Coaching role play circle', when:'Sun, 4:00 PM', host:'SCTA' }
 ];
 /* ============================================================
    STATE  (in-memory session only)
@@ -777,7 +749,6 @@ const state = {
   unlockedProjects:new Set(),
   earnedBadges:new Set(),
   certificates:[],
-  mentor:[],                // {role, text}
   sidebarOpen:false,
   quizState:null
 };
@@ -797,14 +768,12 @@ function awardXP(n){
   state.user.xp += n;
   const newLevel = levelFor(state.user.xp);
   if(newLevel>state.user.level){ state.user.level=newLevel; toast(I.trophy,`Level up! You reached level ${newLevel}`); }
-  if(typeof saveProgress==='function') saveProgress();
 }
 function earnBadge(id){
   if(state.earnedBadges.has(id)) return;
   const b = BADGES.find(x=>x.id===id); if(!b) return;
   state.earnedBadges.add(id);
   toast(`<span style="font-size:1.1rem">${b.emoji}</span>`, `Badge unlocked: ${b.name}`);
-  if(typeof saveProgress==='function') saveProgress();
 }
 
 /* ---------- toast ---------- */
@@ -847,26 +816,25 @@ function viewLanding(){
       ${brandMarkup()}
       <div class="spacer"></div>
       <button class="btn btn-ghost" onclick="openA11y()">${I.a11y} Accessibility</button>
-      <button class="btn btn-ghost" onclick="go('signup',{mode:'signin'})">Sign in</button>
+      <button class="btn btn-ghost" onclick="go('signup')">Sign in</button>
       <button class="btn btn-primary" onclick="go('signup')">Get started</button>
     </nav>
 
     <header class="hero">
       <div class="hero-grid">
         <div>
-          <span class="hero-tag">${I.zap} Coding for Everyone.</span>
-          <h1>Anyone can learn to code. <span class="grad">Your journey starts here.</span></h1>
+          <span class="hero-tag">${I.zap} Equip. Empower. Encourage. Elevate.</span>
+          <h1>Become the coach others rise to meet. <span class="grad">Equip, empower, elevate.</span></h1>
           <p class="lede">${plain(
-            'The Pioneer Coding Academy helps you learn to code the only way that sticks: by building real things, guided by an AI mentor that adapts to how you learn. No experience needed. You belong here.',
-            'Learn real skills by making real projects. An AI helper guides you, one step at a time.')}</p>
+            'Summit Coach Training Academy trains you to coach with confidence through real practice, role play, and honest feedback',
+            'Learn to coach by practicing for real. An AI helper guides you, one step at a time.')}</p>
           <div class="hero-cta">
             <button class="btn btn-primary btn-lg" onclick="go('signup')">Create your account ${I.arrow}</button>
             <button class="btn btn-ghost btn-lg" onclick="go('signup')">Take a quick tour</button>
           </div>
           <div class="hero-proof">
-            <div><div class="n">6</div><div class="l">Academies</div></div>
-            <div><div class="n">40+</div><div class="l">Guided projects</div></div>
-            <div><div class="n">24/7</div><div class="l">AI Mentor</div></div>
+            <div><div class="n">5</div><div class="l">Schools</div></div>
+            <div><div class="n">15+</div><div class="l">Guided practices</div></div>
           </div>
         </div>
         ${ascentVisual()}
@@ -874,7 +842,7 @@ function viewLanding(){
     </header>
 
     <section class="feat-row" aria-label="What you get">
-      ${featCard(I.spark,'An AI mentor that knows you','It remembers your goals, your pace, and where you get stuck, then explains things the way that works for you.')}
+      ${featCard(I.spark,'Learn by practicing','Every lesson gives you real reflection and scenario practice, so the coaching skills stick.')}
       ${featCard(I.hammer,'Projects, not busywork','Every lesson builds one real thing. By the end you have a portfolio you actually made.')}
       ${featCard(I.award,'Proof you can show','Finish a course and earn a verifiable certificate with your name on it.')}
     </section>
@@ -884,7 +852,7 @@ function viewLanding(){
 function brandMarkup(){
   return `<div class="brand" style="padding:0;margin:0">
     <div class="brand-mark">${I.summit}</div>
-    <div class="brand-name">Pioneer<span>Coding Academy</span></div>
+    <div class="brand-name">Summit<span>Learning OS</span></div>
   </div>`;
 }
 function featCard(ic,h,b){ return `<article class="feat"><div class="ic">${ic}</div><h3>${h}</h3><p class="mid">${b}</p></article>`; }
@@ -911,71 +879,36 @@ function ascentVisual(){
 
 /* ---------- SIGN UP ---------- */
 function viewSignup(){
-  const mode = (state.route && state.route.mode==='signin') ? 'signin' : 'signup';
-  const signin = mode==='signin';
   return `<div class="pre">
     <nav class="pre-nav">${brandMarkup()}<div class="spacer"></div>
       <button class="btn btn-ghost" onclick="openA11y()">${I.a11y} Accessibility</button>
       <button class="btn btn-ghost" onclick="go('landing')">Back</button>
     </nav>
     <div class="pre-card">
-      <span class="eyebrow">${signin?'Welcome back':'Step 1 of 3'}</span>
-      <h2 style="font-size:1.7rem">${signin?'Sign in':'Create your account'}</h2>
-      <p class="muted" style="margin:6px 0 22px">${signin?plain('Sign in to pick up right where you left off.','Sign in to continue where you left off.'):plain('Your progress saves to your account, so you never start over.','Free. Your progress is saved so you never start over.')}</p>
-      ${signin?'':`<div class="field">
+      <span class="eyebrow">Step 1 of 3</span>
+      <h2 style="font-size:1.7rem">Create your account</h2>
+      <p class="muted" style="margin:6px 0 22px">${plain('Takes about thirty seconds. No card, no spam.','Quick and free. No card needed.')}</p>
+      <div class="field">
         <label for="su-name">Your name</label>
-        <input id="su-name" type="text" autocomplete="name" placeholder="e.g. Robert" value="${state.user?esc(state.user.name||''):''}">
-      </div>`}
+        <input id="su-name" type="text" autocomplete="name" placeholder="e.g. Robert" value="${state.user?esc(state.user.name):''}">
+      </div>
       <div class="field">
         <label for="su-email">Email</label>
-        <input id="su-email" type="email" autocomplete="email" placeholder="you@example.com" value="${state.user?esc(state.user.email||''):''}">
+        <input id="su-email" type="email" autocomplete="email" placeholder="you@example.com" value="${state.user?esc(state.user.email):''}">
+        <div class="help">Used only to save your progress in a real deployment.</div>
       </div>
-      <div class="field">
-        <label for="su-pass">Password</label>
-        <input id="su-pass" type="password" autocomplete="${signin?'current-password':'new-password'}" placeholder="${signin?'Your password':'At least 8 characters'}">
-        ${signin?'':'<div class="help">Pick something at least 8 characters long.</div>'}
-      </div>
-      <div id="su-error" class="help" style="color:var(--rose);min-height:1.2em;margin-bottom:6px"></div>
-      <button id="su-submit" class="btn btn-primary btn-block btn-lg" onclick="submitSignup()">${signin?'Sign in':'Create account'} ${I.arrow}</button>
-      <p class="help" style="text-align:center;margin-top:16px">
-        ${signin?'New here? ':'Already have an account? '}
-        <a href="#" onclick="go('signup',{mode:'${signin?'signup':'signin'}'});return false;" style="color:var(--blue);font-weight:600">${signin?'Create an account':'Sign in instead'}</a>
-      </p>
+      <button class="btn btn-primary btn-block btn-lg" onclick="submitSignup()">Continue ${I.arrow}</button>
+      <p class="help" style="text-align:center;margin-top:16px">Already have progress from this session? Your data lives in memory until you refresh.</p>
     </div>
   </div>`;
 }
-async function submitSignup(){
-  const mode = (state.route && state.route.mode==='signin') ? 'signin' : 'signup';
-  const signin = mode==='signin';
-  const emailEl=$('#su-email'), passEl=$('#su-pass'), errEl=$('#su-error'), btn=$('#su-submit');
-  const email=(emailEl?emailEl.value.trim():'');
-  const password=(passEl?passEl.value:'');
-  const name=signin?'' : (($('#su-name')&&$('#su-name').value.trim())||'Learner');
-  const showErr=(m)=>{ if(errEl) errEl.textContent=m; };
-  showErr('');
-  if(!email){ showErr('Please enter your email.'); return; }
-  if(!signin && !/^[^@]+@[^@]+\.[^@]+$/.test(email)){ showErr('That email does not look right.'); return; }
-  if(!password || (!signin && password.length<8)){ showErr(signin?'Please enter your password.':'Password needs at least 8 characters.'); return; }
-  if(btn){ btn.disabled=true; btn.style.opacity=.6; }
-  const res = signin ? await doSignIn(email, password) : await doSignUp(name, email, password);
-  if(btn){ btn.disabled=false; btn.style.opacity=1; }
-  if(!res.ok){ showErr(res.message||'Something went wrong. Please try again.'); return; }
-  if(res.confirm){ showErr(''); go('confirm'); return; }
-  // guest or successful login already routed inside doSignUp/doSignIn
-}
-
-function viewConfirm(){
-  return `<div class="pre">
-    <nav class="pre-nav">${brandMarkup()}<div class="spacer"></div>
-      <button class="btn btn-ghost" onclick="go('signup',{mode:'signin'})">Sign in</button>
-    </nav>
-    <div class="pre-card" style="text-align:center">
-      <div style="font-size:2.4rem;margin-bottom:8px">${I.check}</div>
-      <h2 style="font-size:1.6rem">Check your email</h2>
-      <p class="muted" style="margin:10px 0 20px">We sent a confirmation link to your email. Click it to activate your account, then come back and sign in. This keeps your account secure.</p>
-      <button class="btn btn-primary btn-block btn-lg" onclick="go('signup',{mode:'signin'})">Back to sign in</button>
-    </div>
-  </div>`;
+function submitSignup(){
+  const name=$('#su-name').value.trim()||'Learner';
+  const email=$('#su-email').value.trim()||'learner@summit.os';
+  state.user={ name, email, xp:0, level:1, streak:1, academy:null,
+    bio:'', avatarEmoji:'🧗', avatarColor:'#4C8DFF',
+    prefs:{ explanation:null, pacing:null, goal:null, projectType:null } };
+  go('assessment');
 }
 
 /* ---------- LEARNING STYLE ASSESSMENT ---------- */
@@ -996,7 +929,7 @@ const ASSESS = [
   { key:'projectType', q:'Which kind of project excites you most?',
     opts:[ {v:'web',t:'Something on the web',s:'Sites, apps, dashboards'},
            {v:'ai',t:'Something with AI',s:'Assistants, automations, agents'},
-           {v:'people',t:'Something with people',s:'Apps, tools, and sites that help people'} ] }
+           {v:'people',t:'Something with people',s:'Coaching, content, community'} ] }
 ];
 function viewAssessment(){
   const step = state.route.step||0;
@@ -1022,26 +955,20 @@ function viewAssessment(){
         <button class="btn btn-primary btn-block" ${chosen?'':'disabled'} onclick="nextAssess(${step})">
           ${step<ASSESS.length-1?'Next':'See my academies'} ${I.arrow}</button>
       </div>
-      <p class="help" style="text-align:center;margin-top:14px">
-        <a href="#" onclick="skipAssess();return false;" style="color:var(--text-muted)">Skip for now, I will do this later</a>
-      </p>
     </div>
   </div>`;
 }
-function skipAssess(){ if(typeof saveProgress==='function') saveProgress(); go('dashboard'); }
 function pickAssess(key,v){ state.user.prefs[key]=v; render(); }
 function nextAssess(step){
   if(step<ASSESS.length-1) go('assessment',{step:step+1});
-  else { if(typeof saveProgress==='function') saveProgress(); go('academies',{onboarding:true}); }
+  else go('academies',{onboarding:true});
 }
 /* ============================================================
    APP SHELL (authenticated)
    ============================================================ */
 const NAV = [
   { id:'dashboard', label:'Dashboard', icon:I.home },
-  { id:'academies', label:'Academies', icon:I.grid },
-  { id:'mentor', label:'AI Mentor', icon:I.spark, tag:'AI' },
-  { id:'codelab', label:'Code Lab', icon:I.terminal, tag:'RUN' },
+  { id:'academies', label:'Schools', icon:I.grid },
   { id:'projects', label:'Projects', icon:I.hammer },
   { id:'community', label:'Community', icon:I.users },
   { id:'certificates', label:'Certificates', icon:I.award },
@@ -1050,13 +977,13 @@ const NAV = [
 ];
 function shell(title, contentHtml, wide){
   const u=state.user;
-  const active = ['dashboard','academies','academy','lesson','quiz','mentor','codelab','projects','community','certificates','achievements','profile'].includes(state.view)?state.view:'';
+  const active = ['dashboard','academies','academy','lesson','quiz','projects','community','certificates','achievements','profile'].includes(state.view)?state.view:'';
   const navActive = state.view==='academy'||state.view==='lesson'||state.view==='quiz' ? 'academies' : active;
   return `
   <div class="shell">
     ${state.sidebarOpen?'<div class="scrim" onclick="toggleSidebar()"></div>':''}
     <aside class="sidebar ${state.sidebarOpen?'open':''}" aria-label="Main navigation">
-      <div class="brand"><div class="brand-mark">${I.summit}</div><div class="brand-name">Pioneer<span>Coding Academy</span></div></div>
+      <div class="brand"><div class="brand-mark">${I.summit}</div><div class="brand-name">Summit<span>Learning OS</span></div></div>
       <div class="nav-label">Learn</div>
       ${NAV.slice(0,6).map(n=>navItem(n,navActive)).join('')}
       <div class="nav-label">You</div>
@@ -1084,7 +1011,7 @@ function navItem(n,active){
     ${n.icon}<span>${n.label}</span>${n.tag?`<span class="tag">${n.tag}</span>`:''}</button>`;
 }
 function toggleSidebar(){ state.sidebarOpen=!state.sidebarOpen; render(); }
-function signOut(){ if(typeof doSignOut==='function'){ doSignOut(); return; } Object.assign(state,{user:null,view:'landing',completedLessons:new Set(),passedQuizzes:new Set(),unlockedProjects:new Set(),earnedBadges:new Set(),certificates:[],mentor:[]}); render(); }
+function signOut(){ Object.assign(state,{user:null,view:'landing',completedLessons:new Set(),passedQuizzes:new Set(),unlockedProjects:new Set(),earnedBadges:new Set(),certificates:[]}); render(); }
 
 /* ============================================================
    DASHBOARD
@@ -1105,7 +1032,6 @@ function viewDashboard(){
       <p>${plain('One focused lesson moves your project forward and keeps your streak alive.','Do one lesson today. It keeps your streak going.')}</p>
       <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
         <button class="btn btn-gold" onclick="openLesson('${ac.id}','${esc(nextCourse)}')">${I.play} Start lesson</button>
-        <button class="btn btn-ghost" style="border-color:rgba(255,255,255,.35);color:#fff" onclick="go('mentor')">Ask the AI Mentor</button>
       </div>
     </div>`;
 
@@ -1172,7 +1098,7 @@ function viewAcademies(){
       <span class="eyebrow">Step 3 of 3</span>
       <h2 style="font-size:1.5rem">Choose where to start climbing</h2>
       <p class="mid" style="margin-top:6px">Based on your answers we would suggest <b style="color:var(--text)">${esc(suggestedAcademy().name)}</b>, but every door is open. You can switch anytime.</p>
-    </div>`:`<div class="section-head"><div><span class="eyebrow">${I.grid} Six paths to the summit</span><h2>Academies</h2></div></div>`}
+    </div>`:`<div class="section-head"><div><span class="eyebrow">${I.grid} Five schools, one summit</span><h2>Schools</h2></div></div>`}
     <div class="grid g-3">
       ${ACADEMIES.map(a=>academyCard(a)).join('')}
     </div>`;
@@ -1225,7 +1151,7 @@ function viewAcademy(){
           <b>${esc(c)} ${built?'':'<span class="chip" style="font-size:.66rem;vertical-align:middle">preview</span>'}</b>
           <small class="muted">${cdone?'Completed':(locked?'Complete the previous course to unlock':'Ready to start')}</small>
         </div>
-        <button class="btn btn-sm ${cdone?'btn-ghost':(locked?'btn-ghost':'btn-primary')}" ${locked?'disabled':''} onclick="openLesson('${a.id}','${esc(c)}')">${cdone?'Practice again':'Start'}</button>
+        <button class="btn btn-sm ${cdone?'btn-ghost':(locked?'btn-ghost':'btn-primary')}" ${locked?'disabled':''} onclick="openLesson('${a.id}','${esc(c)}')">${cdone?'Review':'Start'}</button>
       </div>`;
     }).join('')}
     <div class="divider"></div>
@@ -1237,7 +1163,7 @@ function viewAcademy(){
       </div>`).join('')}
     </div>`;
 }
-function setAcademy(id){ state.user.academy=id; if(typeof saveProgress==='function') saveProgress(); toast(I.check,'Academy set. Your dashboard is ready.'); go('dashboard'); }
+function setAcademy(id){ state.user.academy=id; toast(I.check,'Academy set. Your dashboard is ready.'); go('dashboard'); }
 /* ============================================================
    LESSON VIEWER
    ============================================================ */
@@ -1259,8 +1185,8 @@ function getLesson(acId, course){
       { type:'example', h:'See it in action', body:
         `<p>Every strong ${esc(course).toLowerCase()} skill starts from a simple pattern you can reuse. Study the shape first, then make it your own in the practice step.</p>
          <div class="callout"><div class="cl-tag">Pattern</div>Start small, make it work, then improve one thing at a time.</div>` },
-      { type:'ai', h:'Ask the AI Mentor', body:
-        `<p>Stuck on any part of ${esc(course)}? The AI Mentor knows your learning style and will re-explain this in the way that works for you. Try asking it to give you an analogy or a step-by-step version.</p>` },
+      { type:'ai', h:'A note on getting unstuck', body:
+        `<p>Stuck on any part of ${esc(course)}? Reread the example, then try the reflection one honest step at a time. Sitting with the discomfort is part of learning to coach.</p>` },
       { type:'practice', h:'Practice exercise', body:
         `<p>Complete one small task using what you just learned. Keep it tiny. Finishing a small thing beats planning a big one.</p>` },
       { type:'project', h:'Project task', body:
@@ -1353,6 +1279,20 @@ function checkFill(id){
   const raw=(document.getElementById(id+'_in').value||'').trim().toLowerCase().replace(/[.;]+$/,'');
   markResult(id, raw===String(it.answer).trim().toLowerCase());
 }
+function checkReflect(id){
+  const it=window.__practice[id];
+  const raw=(document.getElementById(id+'_in').value||'').trim();
+  const words=raw?raw.split(/\s+/).length:0;
+  const need=it.minWords||12;
+  const r=document.getElementById(id+'_res');
+  if(words<need){
+    if(r){ r.className='pr-result no'; r.textContent='Take it a little further. Aim for at least '+need+' words so you have something real to work from. ('+words+' so far)'; }
+    return;
+  }
+  if(r){ r.className='pr-result ok'; r.textContent='Saved. Strong reflection. This is exactly the kind of thinking that builds a coach.'; }
+  if(!state.solvedPractice) state.solvedPractice=new Set();
+  if(!state.solvedPractice.has(id)){ state.solvedPractice.add(id); awardXP(10); const p=document.querySelector('.stat-pill.xp span'); if(p&&state.user) p.textContent=state.user.xp+' XP'; toast(I.zap,'Reflection saved. +10 XP'); }
+}
 function markResult(id, ok){
   const r=document.getElementById(id+'_res'); if(!r) return;
   r.className='pr-result '+(ok?'ok':'no');
@@ -1366,6 +1306,12 @@ function markResult(id, ok){
 /* ---------- practice item markup ---------- */
 function practiceItemHTML(it, id){
   const promptHtml=`<p class="mid" style="margin-bottom:10px">${it.prompt}</p>`;
+  if(it.kind==='reflect'){
+    return `<div class="pr-item"><div class="pr-kind">Reflection</div>${promptHtml}
+      <textarea class="editor" id="${id}_in" spellcheck="true" aria-label="your reflection" placeholder="Write your honest answer here..."></textarea>
+      <div class="runbar"><button class="btn btn-primary btn-sm" onclick="checkReflect('${id}')">Save reflection</button></div>
+      <div class="pr-result" id="${id}_res"></div></div>`;
+  }
   if(it.kind==='predict'){
     return `<div class="pr-item"><div class="pr-kind">Predict the output</div>${promptHtml}
       <div class="code" style="margin:0 0 10px">${esc(it.code||'')}</div>
@@ -1409,7 +1355,7 @@ function viewLesson(){
     const m=BLOCK_META[b.type]||{n:'•'};
     if(b.type==='ai'){
       return `<section class="lesson-block card"><div class="lb-head"><span class="n">${m.n}</span><h3>${esc(b.h)}</h3></div>
-        <div class="callout ai"><div class="cl-tag">AI Mentor</div>${b.body}</div></section>`;
+        <div class="callout ai"><div class="cl-tag">In plain words</div>${b.body}</div></section>`;
     }
     if(b.type==='practice' && b.items){
       const items=b.items.map(it=>{ const id=safe+'_p'+(pcount++); window.__practice[id]=it; return practiceItemHTML(it,id); }).join('');
@@ -1428,7 +1374,6 @@ function viewLesson(){
       <span class="chip" style="color:var(--gold)">${I.zap}+${L.xp} XP</span>
       ${done?'<span class="chip done">'+I.check+' Completed</span>':''}
     </div>
-    ${done?'<p class="muted" style="font-size:.86rem;margin:2px 0 0">You already earned credit for this lesson. Redo it as many times as you like to practice. Your progress stays saved.</p>':''}
     <h1 style="font-size:1.9rem;margin:6px 0 10px">${esc(L.title)}</h1>
     <div class="callout" style="margin-bottom:24px"><div class="cl-tag">${I.target} Learning objective</div>${esc(L.objective)}</div>
     ${blocksHtml}
@@ -1439,10 +1384,8 @@ function viewLesson(){
     </div>
     <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
       ${hasQuiz
-        ? `<button class="btn btn-primary btn-lg" onclick="startQuiz('${key}')">${done?'Practice the quiz again':'Take the quiz to finish'} ${I.arrow}</button>`
-        : `<button class="btn btn-primary btn-lg" onclick="completeLesson('${key}')">${done?'Practice this lesson again':'Mark lesson complete'} ${I.check}</button>`}
-      <button class="btn btn-ghost btn-lg" onclick="go('mentor')">${I.spark} Ask about this</button>
-      <button class="btn btn-ghost btn-lg" onclick="go('codelab')">${I.terminal} Open Code Lab</button>
+        ? `<button class="btn btn-primary btn-lg" onclick="startQuiz('${key}')">${done?'Retake quiz':'Take the quiz to finish'} ${I.arrow}</button>`
+        : `<button class="btn btn-primary btn-lg" onclick="completeLesson('${key}')">${done?'Marked complete ✓':'Mark lesson complete'} ${I.check}</button>`}
     </div>`;
 }
 
@@ -1453,7 +1396,6 @@ function completeLesson(key){
     const [acId,course]=key.split(':');
     const L=getLesson(acId,course);
     awardXP(L.xp);
-    if(typeof saveProgress==='function') saveProgress();
     toast(I.zap,`Lesson complete. +${L.xp} XP`);
     if(first) earnBadge('first-step');
     maybeUnlockProject(acId);
@@ -1517,7 +1459,6 @@ function submitQuiz(key){
     state.passedQuizzes.add(key);
     if(state.completedLessons.size>=1) earnBadge('first-step');
     earnBadge('quiz-ace');
-    if(typeof saveProgress==='function') saveProgress();
   }
   render();
 }
@@ -1531,7 +1472,6 @@ function quizResult(key){
     <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap">
       ${perfect?`<button class="btn btn-primary" onclick="go('academy',{id:'${key.split(':')[0]}'})">Continue ${I.arrow}</button>`
                :`<button class="btn btn-primary" onclick="startQuiz('${key}')">Retake quiz</button>`}
-      <button class="btn btn-ghost" onclick="go('mentor')">Ask the AI Mentor</button>
     </div>
   </div>`;
 }
@@ -1549,7 +1489,7 @@ function viewProjects(){
         <div class="course-ix" style="background:${unlocked?ac.grad:'var(--ridge-2)'};color:${unlocked?'#fff':'var(--text-muted)'}">${unlocked?I.hammer:I.lock}</div>
         <div style="flex:1"><b style="font-size:1.05rem">${esc(p)}</b><div class="muted" style="font-size:.84rem">${unlocked?'Unlocked':'Complete 2 courses to unlock'}</div></div>
       </div>
-      <p class="mid" style="font-size:.9rem">${unlocked?'Ready to build. Every step is guided, and the AI Mentor reviews your work.':'Keep climbing. Projects unlock as you finish courses.'}</p>
+      <p class="mid" style="font-size:.9rem">${unlocked?'Ready to build. Every step is guided, one piece at a time.':'Keep climbing. Projects unlock as you finish courses.'}</p>
       <button class="btn ${unlocked?'btn-primary':'btn-ghost'} btn-block btn-sm" style="margin-top:14px" ${unlocked?'':'disabled'} onclick="${unlocked?`toast(I.hammer,'Project workspace opens here in the full build.')`:''}">${unlocked?'Open project':'Locked'}</button>
     </div>`;
   }).join('');
@@ -1585,7 +1525,7 @@ function viewCertificates(){
 }
 function claimCert(academyName){
   const id='SLOS-'+Date.now().toString(36).toUpperCase().slice(-6)+'-'+Math.random().toString(36).slice(2,5).toUpperCase();
-  const c={ academy:academyName, learner:state.user.name, date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}), id, instructor:'The Pioneer Coding Academy' };
+  const c={ academy:academyName, learner:state.user.name, date:new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}), id, instructor:'Summit Coach Training Academy' };
   state.certificates.push(c);
   awardXP(150); earnBadge('graduate');
   toast(I.award,'Certificate earned. +150 XP');
@@ -1636,7 +1576,7 @@ function viewCommunity(){
       </div>
       <div>
         <div class="card"><h3 style="font-size:1.05rem;margin-bottom:10px">Study groups</h3>
-          ${['Web Builders','Prompt Lab','Python Crew'].map(g=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)"><div class="avatar" style="width:32px;height:32px;font-size:.8rem;background:var(--grad-blue)">${g[0]}</div><div style="flex:1"><b style="font-size:.9rem">${g}</b></div><button class="btn btn-sm btn-ghost">Join</button></div>`).join('')}
+          ${['Web Builders','Prompt Lab','Coach Circle'].map(g=>`<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)"><div class="avatar" style="width:32px;height:32px;font-size:.8rem;background:var(--grad-blue)">${g[0]}</div><div style="flex:1"><b style="font-size:.9rem">${g}</b></div><button class="btn btn-sm btn-ghost">Join</button></div>`).join('')}
         </div>
         <div class="card" style="margin-top:20px"><h3 style="font-size:1.05rem;margin-bottom:10px">Live events</h3>
           ${EVENTS.map(e=>`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="font-size:.9rem">${esc(e.title)}</b><div class="muted" style="font-size:.8rem">${esc(e.when)}</div></div>`).join('')}
@@ -1677,82 +1617,6 @@ function statCard(ic,val,label,color){
 /* ============================================================
    CODE LAB  (free Python + web sandbox)
    ============================================================ */
-function viewCodeLab(){
-  if(!state.lab) state.lab={ tab:'python',
-    html:'<h1>Hello from the Code Lab</h1>\n<p id="msg">Edit me, then press Run.</p>\n<button onclick="document.getElementById(\'msg\').textContent=\'You clicked it.\'">Click</button>',
-    css:'body{font-family:sans-serif;padding:24px;color:#12203a}\nh1{color:#2E6BE0}\nbutton{padding:8px 14px;border-radius:8px;border:1px solid #4C8DFF;background:#4C8DFF;color:#fff;cursor:pointer}',
-    js:'console.log("Web JS is running");',
-    py:'# This runs a real Python engine in your browser.\n# Press Run. First run takes a few seconds to load.\n\ndef greet(name):\n    return "Welcome to the Pioneer Code Lab, " + name\n\nfor n in ["Robert", "friend"]:\n    print(greet(n))' };
-  const t=state.lab.tab;
-  const tabs=`<div class="tabs" role="tablist">
-    <button role="tab" class="${t==='python'?'on':''}" onclick="labSwitch('python')">${I.spark} Python</button>
-    <button role="tab" class="${t==='web'?'on':''}" onclick="labSwitch('web')">${I.book} Web (HTML, CSS, JS)</button>
-  </div>`;
-
-  let body;
-  if(t==='python'){
-    body=`<div class="card">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><b>Python playground</b><span class="chip">real Python via Pyodide</span></div>
-      <textarea class="editor" id="lab_py" spellcheck="false" style="min-height:240px" aria-label="Python editor">${esc(state.lab.py)}</textarea>
-      <div class="runbar"><button class="btn btn-primary" onclick="runLabPy()">Run Python ▶</button>
-        <button class="btn btn-ghost btn-sm" onclick="clearLabPy()">Clear output</button></div>
-      <div class="out" id="lab_out" style="min-height:120px">Press Run to execute. The engine loads on the first run.</div>
-    </div>`;
-  } else {
-    body=`<div class="grid g-2" style="grid-template-columns:1fr 1fr">
-      <div class="card">
-        <div class="tabs" style="margin-bottom:10px">
-          <button class="on" style="border:none">HTML / CSS / JS</button>
-        </div>
-        <label class="muted" style="font-size:.8rem">HTML</label>
-        <textarea class="editor" id="lab_html" spellcheck="false" style="min-height:120px" aria-label="HTML editor">${esc(state.lab.html)}</textarea>
-        <label class="muted" style="font-size:.8rem;margin-top:8px;display:block">CSS</label>
-        <textarea class="editor" id="lab_css" spellcheck="false" style="min-height:100px" aria-label="CSS editor">${esc(state.lab.css)}</textarea>
-        <label class="muted" style="font-size:.8rem;margin-top:8px;display:block">JavaScript</label>
-        <textarea class="editor" id="lab_js" spellcheck="false" style="min-height:80px" aria-label="JavaScript editor">${esc(state.lab.js)}</textarea>
-        <div class="runbar"><button class="btn btn-primary" onclick="runLabWeb()">Run ▶</button></div>
-      </div>
-      <div class="card">
-        <b style="display:block;margin-bottom:10px">Live preview</b>
-        <iframe class="frame" id="lab_frame" title="Live web preview" sandbox="allow-scripts allow-same-origin" style="height:420px"></iframe>
-      </div>
-    </div>`;
-  }
-  return `
-    <div class="section-head"><div><span class="eyebrow">${I.terminal} Write and run code</span><h2>Code Lab</h2></div>
-      <button class="btn btn-ghost btn-sm" onclick="go('academy',{id:'programming'})">Programming Academy</button></div>
-    <p class="mid" style="margin-bottom:18px">A free space to experiment. Write real Python or build a live web page. Nothing here is graded. Break things on purpose.</p>
-    ${tabs}
-    ${body}`;
-}
-function saveLab(){
-  const g=id=>{const e=document.getElementById(id);return e?e.value:null;};
-  if(state.lab.tab==='web'){ const h=g('lab_html'),c=g('lab_css'),j=g('lab_js'); if(h!=null)state.lab.html=h; if(c!=null)state.lab.css=c; if(j!=null)state.lab.js=j; }
-  else { const p=g('lab_py'); if(p!=null) state.lab.py=p; }
-}
-function labSwitch(tab){ saveLab(); state.lab.tab=tab; render(); }
-function runLabWeb(){
-  saveLab();
-  const doc='<!DOCTYPE html><html><head><style>'+state.lab.css+'<\/style></head><body>'+state.lab.html+'<script>'+state.lab.js+'<\/script></body></html>';
-  const f=document.getElementById('lab_frame'); if(f) f.srcdoc=doc;
-}
-function clearLabPy(){ const o=document.getElementById('lab_out'); if(o) o.textContent=''; }
-async function runLabPy(){
-  saveLab();
-  const out=document.getElementById('lab_out');
-  out.textContent='Loading Python engine (first run only, a few seconds)...';
-  let py; try{ py=await ensurePyodide(); }catch(e){ out.textContent='Could not load the Python engine. Check your connection, then Run again.'; return; }
-  out.textContent='Running...';
-  let result='';
-  try{
-    py.runPython('import sys, io\n_b=io.StringIO()\nsys.stdout=_b\nsys.stderr=_b');
-    await py.runPythonAsync(state.lab.py);
-    result=py.runPython('_b.getvalue()');
-  }catch(e){ try{ result=py.runPython('_b.getvalue()'); }catch(_){}; result=(result||'')+'\n'+String(e.message||e); }
-  finally{ try{ py.runPython('sys.stdout=sys.__stdout__\nsys.stderr=sys.__stderr__'); }catch(_){} }
-  out.textContent=(result||'').trim()||'(no output)';
-}
-
 /* ============================================================
    PROFILE  (editable)
    ============================================================ */
@@ -1768,7 +1632,7 @@ function captureProfileInputs(){
 }
 function pfEmoji(e){ captureProfileInputs(); state.user.avatarEmoji=e; render(); }
 function pfColor(c){ captureProfileInputs(); state.user.avatarColor=c; render(); }
-function saveProfile(){ captureProfileInputs(); if(typeof saveProgress==='function') saveProgress(); toast(I.check,'Profile saved.'); render(); }
+function saveProfile(){ captureProfileInputs(); toast(I.check,'Profile saved.'); render(); }
 
 function viewProfile(){
   ensureProfileDefaults();
@@ -1817,8 +1681,8 @@ function viewProfile(){
   </div>`;
 
   const styleCard=`<div class="card">
-    <h3 style="font-size:1.1rem;margin-bottom:6px">How the AI Mentor teaches you</h3>
-    <p class="muted" style="font-size:.86rem;margin-bottom:14px">Set during your learning style assessment. Used in every explanation.</p>
+    <h3 style="font-size:1.1rem;margin-bottom:6px">How your lessons are tuned to you</h3>
+    <p class="muted" style="font-size:.86rem;margin-bottom:14px">Set during your learning style assessment. Used to tune how lessons explain things.</p>
     <div class="opt-row"><b>Explanations</b><span class="mid">${prefLabel[p.explanation]||'Not set'}</span></div>
     <div class="opt-row"><b>Pace</b><span class="mid">${prefLabel[p.pacing]||'Not set'}</span></div>
     <div class="opt-row"><b>Goal</b><span class="mid">${prefLabel[p.goal]||'Not set'}</span></div>
@@ -1839,89 +1703,6 @@ function viewProfile(){
     <div class="grid g-2" style="grid-template-columns:1fr 1fr;margin-top:22px">${editCard}${styleCard}</div>
     <div style="margin-top:22px">${a11yCard}</div>`;
 }
-/* ============================================================
-   AI MENTOR  (live via Anthropic API inside the Claude runtime)
-   For production on Netlify, route this through a serverless
-   function that holds the API key. The call shape stays identical.
-   ============================================================ */
-const MENTOR_SUGGEST=[
-  'Explain this like I am a total beginner',
-  'Give me an analogy for what I just learned',
-  'What should I build next?',
-  'Quiz me on this topic'
-];
-
-function mentorSystemPrompt(){
-  const u=state.user, p=u.prefs;
-  const ac=ACADEMIES.find(a=>a.id===u.academy);
-  const styleMap={ analogy:'lead with real-world analogies', steps:'give clear numbered steps', example:'show a worked example first, then let them copy the pattern', why:'explain the reason it works before the how' };
-  const paceMap={ gentle:'move gently with small pieces and repetition', balanced:'keep a balanced pace and check understanding', fast:'give the core idea quickly and let them run' };
-  return `You are The Pioneer Coding Academy AI Mentor. You teach practical, real-world skills by helping people build actual projects, never busywork.
-The learner is named ${u.name}. Their current academy is ${ac?ac.name:'not chosen yet'}. Level ${u.level}.
-Learning style preferences: ${p.explanation?styleMap[p.explanation]:'no preference'}; pacing: ${p.pacing?paceMap[p.pacing]:'balanced'}; goal: ${p.goal||'general'}; favorite project type: ${p.projectType||'any'}.
-Rules: Be warm, encouraging, and concise. Match their learning style. Prefer small, doable next steps. When they finish something, celebrate briefly and point to the next build. Keep replies under about 180 words unless they ask for depth. Never use em dashes; use commas or periods instead.`;
-}
-
-function viewMentor(){
-  const msgs=state.mentor;
-  const body = msgs.length ? msgs.map(m=>renderMsg(m)).join('') : `
-    <div class="msg ai"><div class="who">AI MENTOR</div>
-      <p>Hi ${esc(state.user.name)}. I am your Summit mentor, and I already know how you like to learn. Ask me anything about your lessons, or tell me what you want to build and I will get you moving.</p></div>`;
-  return `
-  <div class="mentor-wrap">
-    <div class="mentor-scroll" id="mentorScroll" aria-live="polite" aria-label="Conversation with AI Mentor">
-      ${body}
-      ${state.mentorThinking?`<div class="msg ai"><div class="who">AI MENTOR</div><span class="typing"><i></i><i></i><i></i></span></div>`:''}
-    </div>
-    <div class="mentor-input">
-      <div style="flex:1">
-        <div class="mentor-suggest">${MENTOR_SUGGEST.map(s=>`<button class="chip" onclick="mentorAsk(this,'${esc(s).replace(/'/g,"\\'")}')">${esc(s)}</button>`).join('')}</div>
-        <textarea id="mentorText" rows="1" placeholder="Ask your mentor anything..." onkeydown="mentorKey(event)"></textarea>
-      </div>
-      <button class="btn btn-primary" aria-label="Send message" onclick="mentorSend()" ${state.mentorThinking?'disabled':''}>${I.send}</button>
-    </div>
-  </div>`;
-}
-function renderMsg(m){
-  if(m.role==='user') return `<div class="msg user">${esc(m.text)}</div>`;
-  return `<div class="msg ai"><div class="who">AI MENTOR</div>${mdLite(m.text)}</div>`;
-}
-function mdLite(t){
-  let s=esc(t);
-  s=s.replace(/`([^`]+)`/g,'<code>$1</code>');
-  s=s.replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
-  s=s.split(/\n{2,}/).map(p=>'<p>'+p.replace(/\n/g,'<br>')+'</p>').join('');
-  return s;
-}
-function mentorKey(e){ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); mentorSend(); } }
-function mentorAsk(btn,text){ $('#mentorText').value=text; mentorSend(); }
-
-async function mentorSend(){
-  const ta=$('#mentorText'); if(!ta) return;
-  const text=ta.value.trim(); if(!text||state.mentorThinking) return;
-  state.mentor.push({role:'user',text});
-  earnBadge('mentor-chat');
-  state.mentorThinking=true;
-  render();
-  scrollMentor();
-  try{
-    const messages=state.mentor.map(m=>({role:m.role==='user'?'user':'assistant',content:m.text}));
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:1000, system:mentorSystemPrompt(), messages })
-    });
-    const data=await res.json();
-    const reply=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim()
-      || 'I had trouble reaching my brain just now. Try asking again in a moment.';
-    state.mentor.push({role:'assistant',text:reply});
-  }catch(err){
-    state.mentor.push({role:'assistant',text:'I could not connect right now. When this app is deployed, the mentor runs through a small serverless function that holds the API key. Inside the Claude preview it should respond live.'});
-  }
-  state.mentorThinking=false;
-  render();
-  scrollMentor();
-}
-function scrollMentor(){ requestAnimationFrame(()=>{ const s=$('#mentorScroll'); if(s) s.scrollTop=s.scrollHeight; }); }
 
 /* ============================================================
    ACCESSIBILITY MODAL
@@ -1973,9 +1754,9 @@ function setA11y(key,val){
 /* ============================================================
    ROUTER + INIT
    ============================================================ */
-const PRE=['landing','signup','assessment','confirm'];
-const TITLES={ dashboard:'Dashboard', academies:'Academies', academy:'Academy', lesson:'Lesson', quiz:'Quiz',
-  mentor:'AI Mentor', codelab:'Code Lab', projects:'Projects', community:'Community', certificates:'Certificates', achievements:'Achievements', profile:'Profile' };
+const PRE=['landing','signup','assessment'];
+const TITLES={ dashboard:'Dashboard', academies:'Schools', academy:'School', lesson:'Lesson', quiz:'Quiz',
+  projects:'Projects', community:'Community', certificates:'Certificates', achievements:'Achievements', profile:'Profile' };
 
 function render(){
   applyA11y();
@@ -1983,7 +1764,6 @@ function render(){
   if(PRE.includes(state.view)){
     if(state.view==='landing') app.innerHTML=viewLanding();
     else if(state.view==='signup') app.innerHTML=viewSignup();
-    else if(state.view==='confirm') app.innerHTML=viewConfirm();
     else app.innerHTML=viewAssessment();
     return;
   }
@@ -1995,8 +1775,6 @@ function render(){
     case 'academy': content=viewAcademy(); break;
     case 'lesson': content=viewLesson(); break;
     case 'quiz': content=viewQuiz(); break;
-    case 'mentor': content=viewMentor(); wide=true; break;
-    case 'codelab': content=viewCodeLab(); wide=true; break;
     case 'projects': content=viewProjects(); break;
     case 'community': content=viewCommunity(); break;
     case 'certificates': content=viewCertificates(); break;
@@ -2006,158 +1784,11 @@ function render(){
   }
   const title = state.view==='academy' && ACADEMIES.find(a=>a.id===state.route.id) ? ACADEMIES.find(a=>a.id===state.route.id).name.replace(' Academy','') : (TITLES[state.view]||'Summit');
   app.innerHTML=shell(title, content, wide);
-  if(state.view==='mentor') scrollMentor();
 }
-
-/* ============================================================
-   SUPABASE ACCOUNTS + SAVED PROGRESS
-   Paste your two values below. Until you do, the app runs in
-   "guest mode" and keeps progress in memory only (resets on refresh).
-   ============================================================ */
-const SUPABASE_CONFIG = {
-  url: "https://locuizkorvhpmimqoggv.supabase.co",
-  anonKey: "sb_publishable_hbNwz5tU134MDhUjLraDeA_0o0Ub99J"
-};
-
-let supa = null;              // the Supabase client, once ready
-let PROGRESS_TIMER = null;    // debounce timer for saving
-
-function supabaseReady(){ return !!(supa && SUPABASE_CONFIG.url && SUPABASE_CONFIG.anonKey); }
-
-async function initSupabase(){
-  if(!SUPABASE_CONFIG.url || !SUPABASE_CONFIG.anonKey) return; // guest mode
-  try{
-    if(!window.supabase){
-      await new Promise((res,rej)=>{
-        const s=document.createElement('script');
-        s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-        s.onload=res; s.onerror=rej; document.head.appendChild(s);
-      });
-    }
-    supa = window.supabase.createClient(SUPABASE_CONFIG.url, SUPABASE_CONFIG.anonKey);
-    // If a session already exists (returning visitor), load them straight in.
-    const { data:{ session } } = await supa.auth.getSession();
-    if(session && session.user){ await afterLogin(session.user); }
-  }catch(e){ console.log('Supabase init failed, running in guest mode:', e.message); supa=null; }
-}
-
-/* ---------- serialize / restore progress ---------- */
-function serializeProgress(){
-  const u=state.user||{};
-  return {
-    name:u.name||'', email:u.email||'', xp:u.xp||0, level:u.level||1, streak:u.streak||1,
-    academy:u.academy||null, bio:u.bio||'', avatar_emoji:u.avatarEmoji||'🧗', avatar_color:u.avatarColor||'#4C8DFF',
-    prefs:u.prefs||{}, 
-    completed_lessons:[...state.completedLessons],
-    passed_quizzes:[...state.passedQuizzes],
-    unlocked_projects:[...state.unlockedProjects],
-    earned_badges:[...state.earnedBadges],
-    certificates:state.certificates||[]
-  };
-}
-function restoreProgress(row){
-  if(!row) return;
-  state.user = state.user || {};
-  state.user.name = row.name || state.user.name || 'Learner';
-  state.user.email = row.email || state.user.email || '';
-  state.user.xp = row.xp||0; state.user.level = row.level||1; state.user.streak = row.streak||1;
-  state.user.academy = row.academy||null; state.user.bio = row.bio||'';
-  state.user.avatarEmoji = row.avatar_emoji||'🧗'; state.user.avatarColor = row.avatar_color||'#4C8DFF';
-  state.user.prefs = row.prefs||{ explanation:null,pacing:null,goal:null,projectType:null };
-  state.completedLessons = new Set(row.completed_lessons||[]);
-  state.passedQuizzes = new Set(row.passed_quizzes||[]);
-  state.unlockedProjects = new Set(row.unlocked_projects||[]);
-  state.earnedBadges = new Set(row.earned_badges||[]);
-  state.certificates = row.certificates||[];
-}
-
-/* ---------- save (debounced) ---------- */
-function saveProgress(){
-  if(!supabaseReady() || !state.user || !state.user.id) return; // guest mode: nothing to save
-  clearTimeout(PROGRESS_TIMER);
-  PROGRESS_TIMER = setTimeout(async ()=>{
-    try{
-      const payload = Object.assign({ id: state.user.id, updated_at: new Date().toISOString() }, serializeProgress());
-      await supa.from('profiles').upsert(payload);
-    }catch(e){ console.log('save failed:', e.message); }
-  }, 800);
-}
-
-/* ---------- after a successful auth ---------- */
-async function afterLogin(authUser, isReturning){
-  state.user = state.user || {};
-  state.user.id = authUser.id;
-  state.user.email = authUser.email || state.user.email || '';
-  let foundRow = false;
-  // try to load existing profile row
-  try{
-    const { data, error } = await supa.from('profiles').select('*').eq('id', authUser.id).single();
-    if(data){ restoreProgress(data); foundRow = true; }
-    else {
-      // brand new account: seed a row from whatever we have (name from signup metadata)
-      const meta = authUser.user_metadata||{};
-      state.user.name = state.user.name || meta.name || 'Learner';
-      state.user.xp = state.user.xp||0; state.user.level = state.user.level||1; state.user.streak = state.user.streak||1;
-      state.user.academy = state.user.academy||null; state.user.bio = state.user.bio||'';
-      state.user.avatarEmoji = state.user.avatarEmoji||'🧗'; state.user.avatarColor = state.user.avatarColor||'#4C8DFF';
-      state.user.prefs = state.user.prefs||{ explanation:null,pacing:null,goal:null,projectType:null };
-      await supa.from('profiles').upsert(Object.assign({ id: authUser.id }, serializeProgress()));
-    }
-  }catch(e){ console.log('profile load:', e.message); }
-  // Routing rule:
-  // - Someone signing in, or anyone who already has a saved account, goes straight to the dashboard.
-  //   They are never forced back through the learning-style questions.
-  // - Only a brand new signup that has no saved row and no prefs sees the questions, and even then it is skippable.
-  const hasPrefs = state.user.prefs && state.user.prefs.explanation;
-  if(isReturning || foundRow || hasPrefs){ go('dashboard'); }
-  else { go('assessment'); }
-}
-
-/* ---------- sign up / sign in / sign out ---------- */
-async function doSignUp(name, email, password){
-  if(!supabaseReady()){
-    // guest mode fallback: behave like before
-    state.user={ name:name||'Learner', email:email||'learner@pioneer.dev', xp:0, level:1, streak:1, academy:null,
-      bio:'', avatarEmoji:'🧗', avatarColor:'#4C8DFF', prefs:{ explanation:null,pacing:null,goal:null,projectType:null } };
-    go('assessment'); return { ok:true, guest:true };
-  }
-  try{
-    const { data, error } = await supa.auth.signUp({ email, password, options:{ data:{ name } } });
-    if(error) return { ok:false, message:error.message };
-    if(data.user && !data.session){
-      // email confirmation is on: account made but must confirm before session exists
-      return { ok:true, confirm:true };
-    }
-    state.user = { name };
-    if(data.user) await afterLogin(data.user);
-    return { ok:true };
-  }catch(e){ return { ok:false, message:e.message }; }
-}
-async function doSignIn(email, password){
-  if(!supabaseReady()){
-    state.user={ name:'Learner', email:email||'learner@pioneer.dev', xp:0, level:1, streak:1, academy:null,
-      bio:'', avatarEmoji:'🧗', avatarColor:'#4C8DFF', prefs:{ explanation:'steps',pacing:'balanced',goal:'curious',projectType:'web' } };
-    go('dashboard'); return { ok:true, guest:true };
-  }
-  try{
-    const { data, error } = await supa.auth.signInWithPassword({ email, password });
-    if(error) return { ok:false, message:error.message };
-    await afterLogin(data.user, true);
-    return { ok:true };
-  }catch(e){ return { ok:false, message:e.message }; }
-}
-async function doSignOut(){
-  try{ if(supabaseReady()) await supa.auth.signOut(); }catch(e){}
-  state.user=null; state.completedLessons=new Set(); state.passedQuizzes=new Set();
-  state.unlockedProjects=new Set(); state.earnedBadges=new Set(); state.certificates=[];
-  go('landing');
-}
-
 
 // boot
 applyA11y();
 render();
-initSupabase();
 </script>
 </body>
 </html>
